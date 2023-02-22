@@ -1,0 +1,161 @@
+/* .btn {
+    border: none;
+    font-size: 25px;
+    position: fixed;
+    color: white;
+    background-color: rgb(45, 45, 45);
+    font-family: Century Gothic;
+  }
+  
+  .btn:hover::after {
+    width: 100%;
+    right: 0;
+  }
+  
+  .btn::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 4px;
+    right: 0;
+    position: absolute;
+    background: white;
+    transition: width .5s ease 0s, right .5s ease 0s;
+    width: 0;
+  }
+  
+  
+.additem {
+    width: 300px;
+    display: inline-block;
+    position: relative;
+    left: 100px;
+    top: -20px;
+  }
+  
+  .addabout {
+    width: 300px;
+    display: inline-block;
+    position: relative;
+    top: 0px;
+    left: 250px;
+  }
+  
+  .Add__About__films {
+    width: 300px;
+    height: 60px;
+    position: relative;
+    border: none;
+    z-index: 3;
+    display: block;
+    margin: 2px;
+  }
+  
+  .AddBtn__About__Films {
+    width: 300px;
+    height: 60px;
+    position: relative;
+    left: 800px;
+    border: none;
+    z-index: 3;
+    top: -400px;
+    display: block;
+    margin: 2px;
+  }
+  
+  .AddBtn {
+    width: 300px;
+    height: 60px;
+    position: relative;
+    left: 600px;
+    border: none;
+    z-index: 3;
+    top: -10px;
+    display: block;
+    margin: 2px;
+  }
+  
+  .bascet {
+    height: 70px;
+    width: 60px;
+    position: fixed;
+    z-index: 7;
+    right: 210px;
+    top: -5px;
+    border-radius: 0px 0px 15px 0px;
+    background-color: rgb(45, 45, 45);
+  }
+  
+  .users {
+    height: 70px;
+    width: 60px;
+    position: fixed;
+    z-index: 7;
+    right: 270px;
+    top: -5px;
+    border-radius: 0px 0px 15px 0px;
+    background-color: rgb(45, 45, 45);
+  }
+  
+  .notification {
+    height: 70px;
+    width: 60px;
+    position: fixed;
+    z-index: 7;
+    right: 330px;
+    top: -5px;
+    border-radius: 0px 0px 15px 0px;
+    background-color: rgb(45, 45, 45);
+  }
+  
+  .bascet__simple {
+    height: 70px;
+    width: 60px;
+    position: fixed;
+    z-index: 7;
+    right: 140px;
+    top: -5px;
+    border-radius: 0px 0px 15px 0px;
+    background-color: rgb(45, 45, 45);
+  }
+  
+  .notification__simple {
+    height: 70px;
+    width: 60px;
+    position: fixed;
+    z-index: 7;
+    right: 200px;
+    top: -5px;
+    border-radius: 0px 0px 15px 0px;
+    background-color: rgb(45, 45, 45);
+  }
+  
+  .InBascet {
+    padding: 10px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    font-family: Century Gothic;
+    background-color: #d9d9d9;
+    position: absolute;
+    right: 10px;
+    top: 50px;
+  }
+  
+  .InBascet:hover {
+    background-color: #bababa;
+    transition: all 0.4s ease;
+  
+  }
+  .add {
+    height: 70px;
+    width: 60px;
+    position: fixed;
+    z-index: 7;
+    right: 150px;
+    top: -5px;
+    border-radius: 0px 0px 15px 0px;
+    background-color: rgb(45, 45, 45);
+  }
+   */

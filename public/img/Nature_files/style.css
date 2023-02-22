@@ -1,0 +1,1364 @@
+html,
+body {
+
+  overflow-x: hidden;
+  background-image: url(/img/фон.png);
+  /* background: -webkit-linear-gradient(179deg, #afeeee, #fb46a1, #ff69b4, #afeeee);
+   */
+  width: 100%;
+  background-color: rgb(230, 228, 228);
+  height: 100%;
+  padding-top: 40px;
+
+}
+
+.element::-webkit-scrollbar {
+  width: 0;
+}
+
+.footer {
+  position: relative;
+  width: 83%;
+  height: 70px;
+  bottom: 0;
+  right: -250px;
+  border-radius: 10px 10px 0px 0px;
+  background-color: rgb(56, 56, 56);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  flex-grow: 0;
+}
+
+
+.header {
+  width: 1475px;
+  height: 70px;
+  left: 0px;
+  position: fixed;
+  top: -5px;
+  z-index: 6;
+  border-radius: 0px 0px 10px 10px;
+  background-color: rgb(45, 45, 45);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.header__name {
+  color: rgb(200, 199, 199);
+  font-size: 35px;
+  position: absolute;
+  top: 15px;
+  font-family: Century Gothic;
+  left: 15px;
+}
+
+
+.body__fone {
+  width: 1200px;
+  height: 92%;
+
+  position: absolute;
+  background-color: rgb(228, 228, 228);
+  box-shadow: 0 14px 28px rgba(56, 54, 54, 0.25), 0 10px 10px rgba(42, 41, 41, 0.22);
+
+  right: 30px;
+  flex-grow: 1;
+  top: 73px;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  /* flex-wrap: wrap; */
+}
+
+.content {
+  flex-grow: 1;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 100%;
+}
+
+.content2 {
+  /* flex-grow: 1; */
+
+  bottom: 0;
+  min-height: 100%;
+
+}
+
+.btn {
+  border: none;
+  font-size: 25px;
+  position: fixed;
+  color: white;
+  background-color: rgb(45, 45, 45);
+  font-family: Century Gothic;
+}
+
+.btn:hover::after {
+  width: 100%;
+  right: 0;
+}
+
+.btn::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 4px;
+  right: 0;
+  position: absolute;
+  background: white;
+  transition: width .5s ease 0s, right .5s ease 0s;
+  width: 0;
+}
+
+.dark__light {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  right: 20px;
+
+  z-index: 10;
+  bottom: 20px;
+  border-radius: 50px;
+  ;
+  border: none;
+}
+
+/* //////////////////////////////////// Rating */
+
+.container {
+
+  width: 1130px;
+  position: relative;
+
+  left: 230px;
+  bottom: 3px;
+  ;
+  background-color: #e7e7e7;
+  padding: 20px 30px;
+  border: 2px rgb(157, 157, 157);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: grid;
+  z-index: 0;
+  place-items: center;
+  text-align: center;
+}
+
+.container .post {
+  display: none;
+}
+
+.container .text {
+  font-size: 25px;
+  font-family: Century Gothic;
+  color: #999;
+  font-weight: 500;
+}
+
+.container .edit {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  font-family: Century Gothic;
+  color: #999;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.container .edit:hover {
+  text-decoration: underline;
+}
+
+.container form {
+  display: none;
+}
+
+input:checked~form {
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.container .star-widget input {
+  display: none;
+}
+
+.star-widget label {
+  font-size: 40px;
+  color: rgb(181, 181, 181);
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+
+}
+
+input:not(:checked)~label:hover,
+input:not(:checked)~label:hover~label {
+  color: #fd4;
+}
+
+input:checked~label {
+  color: #fd4;
+}
+
+input#rate-5:checked~label {
+  color: #fe7;
+  text-shadow: 0 0 20px #952;
+}
+
+input#rate-2:checked~label {
+  color: rgb(250, 154, 81);
+}
+
+input#rate-1:checked~label {
+  color: rgb(255, 94, 0);
+}
+
+input#rate-3:checked~label {
+  color: rgb(233, 247, 77);
+}
+
+input#rate-1:checked~form header:before {
+  content: "i just hate it"
+}
+
+input#rate-2:checked~form header:before {
+  content: "i don't like it"
+}
+
+input#rate-3:checked~form header:before {
+  content: "i is awasome"
+}
+
+input#rate-4:checked~form header:before {
+  content: "i just like it"
+}
+
+input#rate-5:checked~form header:before {
+  content: "i just love it"
+}
+
+form header {
+  width: 100%;
+  font-family: Century Gothic;
+  font-size: 25px;
+  color: rgb(211, 187, 5);
+  font-weight: 500;
+  margin: 10px 0 10px 0;
+
+  text-align: center;
+  transition: all 0.2s ease;
+
+}
+
+
+form .textarea {
+  height: 100px;
+  font-family: Century Gothic;
+  width: 100%;
+  color: #333;
+  overflow: hidden;
+}
+
+form .textarea textarea {
+  height: 100%;
+  font-family: Century Gothic;
+  width: 100%;
+  color: #333;
+  outline: none;
+  border: 2px 2px 2px 2px solid #333;
+  background: rgb(188, 188, 188);
+  padding: 10px;
+  font-size: 17px;
+}
+
+form .Btn {
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+form .Btn button {
+  height: 100%;
+  width: 100%;
+  border: 2px solid rgb(94, 94, 94);
+  outline: none;
+  background: rgb(208, 208, 208);
+  color: #333;
+  font-size: 17px;
+  font-family: Century Gothic;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form .Btn button:hover {
+  background: #a1a1a1;
+  color: #333
+}
+
+/* ////////////////////////////////////  close Rating  // open menu plase// */
+.menu {
+  height: 675px;
+  width: 250px;
+  position: fixed;
+  background-color: rgb(40, 41, 49);
+  float: left;
+  left: 1px;
+  z-index: 1;
+  top: 70px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.7);
+}
+
+.menu__btn:hover::after {
+  width: 100%;
+  right: 0;
+}
+
+.menu__btn::after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 4px;
+  right: 0;
+  position: absolute;
+  background: white;
+  transition: width .5s ease 0s, right .5s ease 0s;
+  width: 0;
+}
+
+.menu__btn {
+  height: 70px;
+  width: 200px;
+  border: none;
+  font-size: 25px;
+  position: relative;
+  color: white;
+  top: 200px;
+  left: 20px;
+  background-color: rgb(40, 41, 49);
+  font-family: Century Gothic;
+}
+
+/* //////////////////////////////////// close menu plase// open form style */
+.circle {
+  width: 150px;
+  height: 150px;
+  background-color: #DCDCDC;
+  border-radius: 100px;
+  position: absolute;
+  z-index: 4;
+  top: -80px;
+  right: 130px;
+}
+
+.icon {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  z-index: 5;
+  top: -80px;
+  color: #5f5f5f;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 90px;
+  right: 130px;
+}
+
+.LogIn {
+  height: 70px;
+  width: 130px;
+  position: fixed;
+  z-index: 7;
+  right: 15px;
+  top: -5px;
+  border-radius: 0px 0px 15px 0px;
+  background-color: rgb(45, 45, 45);
+}
+
+.registration {
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  top: 400px;
+  left: 110px;
+  font-family: Century Gothic;
+}
+
+.vhod {
+  width: 400px;
+  height: 500px;
+  background-color: #727272;
+  z-index: 3;
+  opacity: 100%;
+  position: absolute;
+  left: 650px;
+  top: 200px;
+  border-radius: 30px;
+  box-shadow: 0 14px 28px rgba(56, 54, 54, 0.25), 0 10px 10px rgba(42, 41, 41, 0.22);
+}
+
+.input__login__vhod {
+  width: 350px;
+  height: 50px;
+
+}
+
+.input__vhod {
+  width: 300px;
+  height: 50px;
+  margin: 10px;
+  border: none;
+  position: relative;
+  top: 100px;
+  left: 50px;
+
+}
+
+.vhod__btn {
+  width: 300px;
+  height: 60px;
+  margin: 10px;
+  position: relative;
+  top: 160px;
+  left: 35px;
+  background-color: rgb(69, 69, 69);
+  border: none;
+  font-family: Century Gothic;
+  font-size: 20px;
+  color: white
+}
+
+.LogIN {
+  position: absolute;
+  font-size: 40px;
+  left: 150px;
+  top: 20px;
+  font-family: Century Gothic;
+}
+
+.reg {
+  width: 400px;
+  height: 500px;
+  background-color: #727272;
+  z-index: 3;
+  opacity: 100%;
+  position: absolute;
+  left: 650px;
+  top: 200px;
+  border-radius: 30px;
+  box-shadow: 0 14px 28px rgba(56, 54, 54, 0.25), 0 10px 10px rgba(42, 41, 41, 0.22);
+}
+
+.input__login__reg {
+  width: 350px;
+  height: 50px;
+
+}
+
+.input__reg {
+  width: 300px;
+  height: 50px;
+  margin: 10px;
+  border: none;
+  position: relative;
+  top: 100px;
+  left: 50px;
+
+}
+
+.reg__btn {
+  width: 300px;
+  height: 60px;
+  margin: 10px;
+  position: relative;
+  top: 160px;
+  left: 35px;
+  background-color: rgb(69, 69, 69);
+  border: none;
+  font-family: Century Gothic;
+  font-size: 20px;
+  color: white
+}
+
+.regist {
+  position: absolute;
+  font-size: 40px;
+  font-family: Century Gothic;
+  left: 100px;
+  top: 20px;
+
+}
+
+.loginForm {
+  text-decoration: none;
+  position: absolute;
+  color: white;
+  top: 410px;
+  left: 170px;
+  font-family: Century Gothic;
+}
+
+.input__addon__name {
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  color: #4c4c4c;
+}
+
+.input__addon__key {
+  position: absolute;
+  top: 190px;
+  left: 20px;
+  color: #4c4c4c;
+}
+
+
+
+.LogBtn {
+  position: fixed;
+  z-index: 999;
+  top: -5px;
+  height: 70px;
+  width: 100px;
+  right: 20px;
+  border: none;
+  color: white;
+  font-family: Century Gothic;
+  font-size: 20px;
+  /* position: absolute; */
+  background-color: rgb(48, 47, 47);
+}
+
+/* ////////////////////////////////////// close form style // open header btn*/
+.add {
+  height: 70px;
+  width: 60px;
+  position: fixed;
+  z-index: 7;
+  right: 150px;
+  top: -5px;
+  border-radius: 0px 0px 15px 0px;
+  background-color: rgb(45, 45, 45);
+}
+.addName{
+ width:500px;
+ background-color: #333;
+ position:relative;
+ height:60px;
+ right:-550px;
+ font-family: Century Gothic;
+ color:white;
+ text-align: center;
+ font-size: 40px;
+}
+.Additems {
+  width: 300px;
+  height: 60px;
+  position: relative;
+  left: 300px;
+  border: none;
+  z-index: 3;
+  top: 90px;
+  display: block;
+  margin: 2px;
+}
+
+.Add__About__films {
+  width: 300px;
+  height: 60px;
+  position: relative;
+  left: 800px;
+  border: none;
+  z-index: 3;
+  top: -290px;
+  display: block;
+  margin: 2px;
+}
+
+.AddBtn__About__Films {
+  width: 300px;
+  height: 60px;
+  position: relative;
+  left: 800px;
+  border: none;
+  z-index: 3;
+  top: -400px;
+  display: block;
+  margin: 2px;
+}
+
+.AddBtn {
+  width: 300px;
+  height: 60px;
+  position: relative;
+  left: 600px;
+  border: none;
+  z-index: 3;
+  top: -200px;
+  display: block;
+  margin: 2px;
+}
+
+.bascet {
+  height: 70px;
+  width: 60px;
+  position: fixed;
+  z-index: 7;
+  right: 210px;
+  top: -5px;
+  border-radius: 0px 0px 15px 0px;
+  background-color: rgb(45, 45, 45);
+}
+.bascet__simple{
+  height: 70px;
+  width: 60px;
+  position: fixed;
+  z-index: 7;
+  right: 140px;
+  top: -5px;
+  border-radius: 0px 0px 15px 0px;
+  background-color: rgb(45, 45, 45);
+}
+.InBascet {
+  padding: 10px;
+  height: 40px;
+  text-align: center;
+  border: none;
+  font-family: Century Gothic;
+  background-color: #d9d9d9;
+  position: absolute;
+  right: 10px;
+  top: 50px;
+}
+
+.InBascet:hover {
+  background-color: #bababa;
+
+}
+
+.DeleteVideo {
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  border: none;
+  background-color: rgb(222, 145, 36);
+  font-family: Century Gothic;
+  color: white;
+  position: absolute;
+  right: 20px;
+  top: 50px;
+}
+
+.DeleteVideo:hover {
+  background-color: rgb(210, 124, 3);
+}
+.delete__moves{
+  position:relative;
+  float:right;
+  margin:2px;
+  border:none;
+  color:#727272
+}
+.delete__moves:hover{
+  color:white;
+  background-color: rgb(184, 184, 184);
+}
+/* /////////////////////////////////////////////////// films object */
+.film {
+  position: relative;
+  top: -10px;
+}
+
+.film__name {
+  position: absolute;
+  float: right;
+  padding-left: 150px;
+  font-size: 20px;
+  font-family: Century Gothic;
+  color: black;
+}
+
+.film__country {
+  position: absolute;
+  left: 200px;
+  top: 100px;
+  font-size: 15px;
+  color: black;
+  font-family: Century Gothic;
+}
+
+.film__genre {
+  position: absolute;
+  left: 200px;
+  top: 80px;
+  font-size: 15px;
+  color: black;
+  font-family: Century Gothic;
+}
+
+.film__star {
+  position: absolute;
+  left: 3px;
+  top: 12px;
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+  width: 40px;
+  z-index: 3;
+  height: 20px;
+  text-align: center;
+  font-family: Century Gothic;
+  background-color: rgb(222, 130, 1);
+  box-shadow: 0 14px 28px rgba(56, 54, 54, 0.25), 0 10px 10px rgba(42, 41, 41, 0.22);
+  border-radius: 10px;
+}
+
+.film__object {
+  width: 1150px;
+
+  height: 150px;
+  padding: 3px;
+  z-index: 2;
+  background-color: #efeeee;
+  position: relative;
+  top: 0px;
+  border-bottom: 1px solid rgb(146, 145, 145);
+  left: 270px;
+}
+
+.film__object:hover {
+  background-color: #d9d9d9;
+  transition: all 0.2s ease;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.film__image {
+  border-radius: 10px;
+  width: 115px;
+  opacity: 100%;
+  height: 140px;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+}
+
+/* //////////////////////////////////////////////////////////////////////// description films */
+.description__film {
+  width: 100%;
+  height: 1000px;
+  padding: 3px;
+  z-index: 2;
+  background-color: #efefef;
+  position: relative;
+  bottom: 0px;
+  ;
+  border-bottom: 1px solid rgb(146, 145, 145);
+  left: 250px;
+}
+
+.about__film {
+  color: black;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: Century Gothic;
+  left: 380px;
+  position: absolute;
+  top: 100px;
+}
+
+.description__image {
+  opacity: 100%;
+  height: 400px;
+  position: absolute;
+  /* background: linear-gradient(to top, black -20%, transparent 90%); */
+  left: 5px;
+  margin: 10px;
+  border-radius: 15px 3px 15px 3px;
+  border: solid 4px rgb(94, 94, 94);
+  top: 5px;
+}
+
+.description__genre {
+  position: absolute;
+  left: 280px;
+  top: 200px;
+  font-size: 15px;
+  color: black;
+  font-family: Century Gothic;
+}
+
+.description__name {
+  position: absolute;
+  float: left;
+  left: 500px;
+  font-size: 60px;
+  top: -30px;
+  font-weight: 500px;
+  ;
+  font-family: Century Gothic;
+  color: black;
+}
+
+.description__actor {
+  position: absolute;
+  left: 280px;
+  top: 230px;
+  font-size: 15px;
+  color: black;
+  font-family: Century Gothic;
+}
+
+.description__producer {
+  position: absolute;
+  left: 280px;
+  top: 260px;
+  font-size: 15px;
+  color: black;
+
+  font-family: Century Gothic;
+}
+
+.description__operator {
+  position: absolute;
+  left: 280px;
+  top: 290px;
+  font-size: 15px;
+  color: black;
+  font-family: Century Gothic;
+}
+
+.description__screenwriter {
+  position: absolute;
+  left: 280px;
+  top: 320px;
+  font-size: 15px;
+  color: black;
+  font-family: Century Gothic;
+}
+
+.description__regicer {
+  position: absolute;
+  left: 280px;
+  top: 350px;
+  font-size: 15px;
+  color: black;
+  font-family: Century Gothic;
+}
+
+.description__description {
+  position: absolute;
+  left: 380px;
+  top: 460px;
+  width:500px;
+  font-size: 15px;
+  color: black;
+  font-family: Century Gothic;
+}
+
+.textViews {
+  color: black;
+  width: 100px;
+  font-weight: bold;
+  position: relative;
+  float:left;
+  left:250px;
+}
+
+.description__country {
+  position: absolute;
+  left: 280px;
+  top: 175px;
+  font-size: 15px;
+  color: black;
+  font-family: Century Gothic;
+}
+
+
+.slider {
+  width: 400px;
+  height: 250px;
+  background-color: #333;
+  position: absolute;
+  bottom: 40px;
+  left: 25%;
+}
+
+.averange {
+  position: absolute;
+  left: 20px;
+  top: 420px;
+  font-size: 15px;
+  color: black;
+  font-family: Century Gothic
+    /* font-size: 80px; */
+}
+
+.averangeText {
+  font-size: 80px;
+  color: #333;
+  
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.voices {
+  position: absolute;
+  left: -80px;
+  top: 520px;
+  font-size: 15px;
+  color: black;
+  font-family: Century Gothic;
+
+}
+
+.left__Btn {
+  position: absolute;
+  bottom: 130px;
+  width: 50px;
+  height: 50px;
+  left: 250px;
+  border: none;
+  border-radius: 50%;
+}
+
+.right__Btn {
+  position: absolute;
+  bottom: 130px;
+  width: 50px;
+  height: 50px;
+  right: 570px;
+  border: none;
+  border-radius: 50%;
+}
+
+/* //////////////////////////////////////////////////////////////// search films*/
+.search__films {
+  position: absolute;
+  right: 38%;
+  top: 15%;
+  width: 350px;
+  height: 50px;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  z-index: 1;
+  font-family: Century Gothic;
+  background-color: #666666;
+    color:rgb(255, 255, 255);
+}
+
+.search__films__button {
+  position: absolute;
+  right: 32%;
+  top: 18%;
+  width: 80px;
+  height: 50px;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  
+  background-color: #666666;
+    color:rgb(255, 255, 255);
+  z-index: 1;
+}
+
+.search__of__genre {
+  padding: 5px;
+  height: 30px;
+  border: none;
+  background-color: #a5a5a5;
+  position: relative;
+  opacity: 80%;
+  z-index: 1;
+  color: white;
+  border-radius: 10px;
+  font-family: Century Gothic;
+}
+
+.bovik {
+  position: absolute;
+  right: 850px;
+  top: 170px;
+}
+
+.adventure {
+  position: absolute;
+  right: 740px;
+  top: 170px;
+}
+
+.triller {
+  position: absolute;
+  right: 663px;
+  top: 170px;
+}
+
+.horror {
+  position: absolute;
+  right: 580px;
+  top: 170px;
+}
+
+.dramma {
+  position: absolute;
+  right: 800px;
+  top: 210px;
+}
+
+.comedy {
+  position: absolute;
+  right: 720px;
+  top: 210px;
+}
+
+.melodrama {
+  position: absolute;
+  right: 600px;
+  top: 210px;
+}
+
+.tragedy {
+  position: absolute;
+  right: 520px;
+  top: 210px;
+}
+
+.fantastic {
+  position: absolute;
+  right: 475px;
+  top: 170px;
+}
+
+.anime {
+  position: absolute;
+  right: 450px;
+  top: 210px;
+}
+
+.mistyc {
+  position: absolute;
+  right: 820px;
+  top: 250px;
+}
+
+.detective {
+  position: absolute;
+  right: 740px;
+  top: 250px;
+}
+
+.family {
+  position: absolute;
+  right: 650px;
+  top: 250px;
+}
+
+.child {
+  position: absolute;
+  right: 570px;
+  top: 250px;
+}
+
+.istoric {
+  position: absolute;
+  right: 450px;
+  top: 250px;
+}
+
+/* ////////////////////////////////////////////////////////////////////////  COMMENTS */
+.comment {
+  position: relative;
+  width: 1150px;
+  margin: 5px;
+  bottom: 10px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  right: -240px;
+  padding: 30px;
+  height: 100%;
+  background-color: #efefef;
+
+}
+.Admin__comment__box{
+  width: 100%;
+  height: 100px;
+  margin: 2px;
+  right: 10px;
+  position: relative;
+  font-family: Century Gothic;
+  background-color: rgb(184, 184, 184);
+}
+.commentText{
+  color: #333;
+}
+
+.commentName {
+  position: relative;
+  font-size: 40px;
+  font-family: Century Gothic;
+  
+  left: -430px;
+  top: -15px;
+}
+
+.comment__box {
+  width: 100%;
+  height: 100px;
+  margin: 2px;
+  right: 10px;
+  position: relative;
+  font-family: Century Gothic;
+  background-color: rgb(245, 245, 245);
+}
+
+.commentUsername {
+  width: 20%;
+  height: 30px;
+  position: relative;
+  right: 0px;
+  text-align: left;
+  margin: 10px;
+  top: 15px;
+  border: #333 2px;
+  border-bottom: 1px solid #333;
+}
+
+.commentText {
+  position: relative;
+  bottom: -25px;
+  margin: 10px;
+  float: left;
+  left: 10px;
+}
+
+.deleteComment {
+  position: relative;
+  font-family: Century Gothic;
+  float: right;
+  margin: 20px;
+  padding: 5px;
+  background-color: rgb(245, 245, 245);
+  bottom: 25px;
+  border: none;
+  color: #5f5f5f;
+  /* background-color: #f0eeee; */
+}
+
+.deleteComment:hover {
+  transition: all 0.4s ease;
+  font-family: Century Gothic;
+  color: rgb(180, 180, 180);
+  /* background-color: rgb(255, 181, 42); */
+}
+
+/* ////////////////////////////////////////////////////////////// */
+.dark__description__film {
+  width: 100%;
+  height: 700px;
+  padding: 3px;
+  z-index: 2;
+  background-color: #333;
+  position: relative;
+  bottom: 0px;
+  ;
+  border-bottom: 1px solid rgb(146, 145, 145);
+  left: 250px;
+}
+
+.dark__about__film {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Century Gothic;
+  left: 380px;
+  position: absolute;
+  top: 100px;
+}
+
+.dark__description__image {
+  opacity: 100%;
+  height: 400px;
+  position: absolute;
+  left: 5px;
+  margin: 10px;
+  top: 5px;
+}
+
+.dark__description__genre {
+  position: absolute;
+  left: 380px;
+  top: 200px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  font-family: Century Gothic;
+}
+
+.dark__description__name {
+  position: absolute;
+  float: left;
+  left: 500px;
+  font-size: 60px;
+  top: -30px;
+  font-weight: 500px;
+  ;
+  font-family: Century Gothic;
+  color: rgb(255, 255, 255);
+}
+
+.dark__description__actor {
+  position: absolute;
+  left: 380px;
+  top: 230px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  font-family: Century Gothic;
+}
+
+.dark__description__producer {
+  position: absolute;
+  left: 380px;
+  top: 260px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+
+  font-family: Century Gothic;
+}
+
+.dark__description__operator {
+  position: absolute;
+  left: 380px;
+  top: 290px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  font-family: Century Gothic;
+}
+
+.dark__description__screenwriter {
+  position: absolute;
+  left: 380px;
+  top: 320px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  font-family: Century Gothic;
+}
+
+.dark__description__regicer {
+  position: absolute;
+  left: 380px;
+  top: 350px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  font-family: Century Gothic;
+}
+
+.dark__description__description {
+  position: absolute;
+  left: 700px;
+  top: 110px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  font-family: Century Gothic;
+}
+
+.dark__textViews {
+  color: rgb(255, 255, 255);
+  width: 100px;
+  font-weight: bold;
+}
+
+.dark__description__country {
+  position: absolute;
+  left: 380px;
+  top: 175px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  font-family: Century Gothic;
+}
+
+
+.dark__slider {
+  width: 400px;
+  height: 250px;
+  background-color: #333;
+  position: absolute;
+  bottom: 40px;
+  left: 25%;
+}
+
+.dark__averange {
+  position: absolute;
+  left: 20px;
+  top: 420px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  font-family: Century Gothic
+    /* font-size: 80px; */
+}
+
+.dark__averangeText {
+  font-size: 80px;
+  color: rgb(255, 255, 255);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.dark__voices {
+  position: absolute;
+  left: 20px;
+  top: 520px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  font-family: Century Gothic;
+}
+
+.dark__container{
+  
+  width: 1140px;
+  position: relative;
+
+  left: 250px;
+  bottom: 3px;
+  ;
+  background-color: #333;
+  padding: 20px 30px;
+  border: 1px rgb(157, 157, 157);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: grid;
+  z-index: 0;
+  place-items: center;
+  text-align: center;
+}
+
+
+.dark__body__fone {
+  width: 1200px;
+  height: 92%;
+  position: absolute;
+  background-color: rgb(73, 73, 73);
+  box-shadow: 0 14px 28px rgba(56, 54, 54, 0.25), 0 10px 10px rgba(42, 41, 41, 0.22);
+  right: 15px;
+  flex-grow: 1;
+  top: 73px;
+}
+.dark__comment{
+  position: relative;
+  width: 1150px;
+  margin: 5px;
+  bottom: 10px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  right: -240px;
+  padding: 30px;
+  height: 100%;
+  background-color: #333;
+
+}
+
+.dark__comment__text{
+  color:white;
+}

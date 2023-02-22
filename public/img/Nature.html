@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost:3000/loginForm -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature</title>
+    <link rel="stylesheet" href="./Nature_files/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="./Nature_files/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Nature_files/font-awesome.min.css">
+
+    </head><body><div class="header">
+        <div class="header__name">Kino-polka</div>
+    </div>
+    
+        <a href="http://localhost:3000/enter"><button class=" btn LogIn">вход</button></a>
+    
+
+    
+            
+
+
+
+    <div class="menu">
+
+    <a href="http://localhost:3000/home"><button class="menu__btn"> Главная</button></a>
+    <a href="http://localhost:3000/categories/1"><button class="menu__btn">Фильмы</button></a>
+    <a href="http://localhost:3000/categories/2"><button class="menu__btn">Сериалы</button></a>
+    <a href="http://localhost:3000/categories/3"><button class="menu__btn">Мультфильмы</button></a>
+
+</div>
+
+        <a href="http://localhost:3000/light"><button class="dark__light"><i class="fa fa-sun fa-2x" aria-hidden="true"></i></button></a>
+        
+
+        
+        <div class="wrapper">
+            <div class="content">
+                <div class="body__fone" id="fone"></div>
+
+                    <form action="http://localhost:3000/login" method="post">
+
+                        <div class="vhod">
+                            <div><i class="fa fa-user-circle fa-10x icon" aria-hidden="true"></i></div>
+                            <div class="circle"></div>
+                            <div class="LogIN"></div>
+
+                            <span class="input__addon__name"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                            <input class="input__vhod" name="name" placeholder="Введите имя">
+                            <span class="input__addon__key"><i class="fa fa-key fa-2x" aria-hidden="true"></i></span>
+                            <input class="input__vhod" id="Textinput" name="password" placeholder="Введите пароль">
+                            <script>
+                                document.getElementById('Textinput').value="";
+                            </script>
+                            <input type="submit" class="vhod__btn" value="Войти">
+                            <a href="http://localhost:3000/registration" class="registration">Зарегистрироваться</a>
+                        </div>
+
+                    </form>
+                    <a href="http://localhost:3000/home">Главная</a>
+
+            </div>
+                <footer class="footer"></footer>
+    
+
+        </div></body></html>

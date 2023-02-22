@@ -1,0 +1,60 @@
+<%- include('particles/header.ejs') %>
+<style>
+    html,
+    body {
+    
+      overflow-x: hidden;
+      background-image: url(/img/фон.png);
+      /* background: -webkit-linear-gradient(179deg, #afeeee, #fb46a1, #ff69b4, #afeeee);
+       */
+      width: 100%;
+      background-color: rgb(230, 228, 228);
+      height: 100%;
+      padding-top: 40px;
+    
+    }
+       </style>
+    <div class="wrapper">
+        <div class="content">
+           
+
+                <%- include('particles/menu.ejs') %>
+                
+                <div class="addName">Добавление фильма</div>
+                    <form action="/AddItems" method="post">
+                        
+                        <!-- <input class="Additems" name="genre" placeholder="жанр"> -->
+                        <div class="addgenre">
+                            
+                        <% for (let i=0; i < genres.length; i++) { %>
+                        
+                            <div class="AddGenres"><input type="checkbox" class="checkbox" name="check" value="<%= genres[i].name %>">
+                                <label class="nameGenre"><%= genres[i].name %></label></div>
+                        <% } %>
+                    </div>
+                    <div class="additem">
+                        <input class="Additems" name="description" placeholder="описание">
+                        <input class="Additems" name="type" placeholder="тип">
+                        <input class="Additems" name="country" placeholder="страна">
+                        <input class="Additems" name="name" placeholder="имя">
+                        <input class="Additems" name="image" type="file" placeholder="файл">
+                        <input class="Additems" name="year" placeholder="год">
+                        <input class="Additems" name="status" placeholder="статус">
+                        <input class="Additems" name="video" placeholder="видео">
+                        <input class="Additems" name="treller" placeholder="треллер">
+                    </div>
+                        <div class="addabout">
+                        <input class="Add__About__films" name="actor" placeholder="актеры">
+                        <input class="Add__About__films" name="producer" placeholder="продюсер">
+                        <input class="Add__About__films" I name="regicer" placeholder="режиссер">
+                        <input class="Add__About__films" name="screenwriter" placeholder="сценарист">
+                        <input class="Add__About__films" name="operator" placeholder="оператор">
+                    </div>
+                        
+                        <a><input class="btn AddBtn" type="submit" value="опубликовать"></a>
+                    </form>
+                    
+                   
+        </div>
+        <%- include('particles/footer.ejs') %>
+    </div>

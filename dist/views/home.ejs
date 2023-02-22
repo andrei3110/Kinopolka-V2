@@ -1,0 +1,241 @@
+<%- include('particles/header.ejs') %>
+       
+        
+        <div class="content">
+            
+            <div class="genres__container">
+
+
+                <div class="searchForGenresBtn ">
+
+                        <form class="search__of__genre" action="/bovik" method="post"><input
+                                        type="submit" class="allgenre bovik " name="name"
+                                        value="боевик"></form>
+                        <form class="search__of__genre" action="/adventure" method="post"><input
+                                        type="submit" class="allgenre adventure " name="name"
+                                        value="приключения"></form>
+                        <form class="search__of__genre" action="/triller" method="post"><input
+                                        type="submit" class="allgenre triller " name="name"
+                                        value="триллер"></form>
+                        <form class="search__of__genre" action="/horror" method="post"><input
+                                        type="submit" class="allgenre horror " name="name"
+                                        value="ужасы"></form>
+                        <form class="search__of__genre" action="/drama" method="post"><input
+                                        type="submit" class="allgenre dramma " name="name"
+                                        value="драмма"></form>
+                        <form class="search__of__genre" action="/comedy" method="post"><input
+                                        type="submit" class="allgenre comedy " name="name"
+                                        value="комедия"></form>
+                        <form class="search__of__genre" action="/melodrama" method="post"><input
+                                        type="submit" class="allgenre melodrama " name="name"
+                                        value="мелодрамма"></form>
+                        <form class="search__of__genre" action="/tragedy" method="post"><input
+                                        type="submit" class="allgenre tragedy " name="name"
+                                        value="трагедия"></form>
+                        <form class="search__of__genre" action="/fantastic" method="post"><input
+                                        type="submit" class="allgenre fantastic" name="name"
+                                        value="фантастика"></form>
+                        <form class="search__of__genre" action="/anime" method="post"><input
+                                        type="submit" class="allgenre anime" name="name" value="аниме">
+                        </form>
+                        <form class="search__of__genre" action="/mistyc" method="post"><input
+                                        type="submit" class="allgenre mistyc" name="name"
+                                        value="мистика"></form>
+                        <form class="search__of__genre" action="/detective" method="post"><input
+                                        type="submit" class="allgenre detective" name="name"
+                                        value="детектив"></form>
+                        <form class="search__of__genre" action="/child" method="post"><input
+                                        type="submit" class="allgenre child" name="name"
+                                        value="детский"></form>
+                        <form class="search__of__genre" action="/family" method="post"><input
+                                        type="submit" class="allgenre family" name="name"
+                                        value="семейный"></form>
+                        <form class="search__of__genre" action="/istoric" method="post"><input
+                                        type="submit" class="allgenre istoric" name="name"
+                                        value="исторический"></form>
+
+                </div>
+        </div>
+            <div class="grid">
+                
+                <div class="grid__side">
+                    <div class="sidebar">
+                        <div class="menu__wrapper">
+                            <div class="menu">
+                              <a href="/home"><button class="menu__button"><iconify-icon class="home__icons"icon="majesticons:home" width="30"></iconify-icon> Главная</button></a>
+                              <a href="/categories/1"><button class="menu__button"><iconify-icon class="icons"icon="material-symbols:play-arrow-outline" width="30"></iconify-icon> Фильмы</button></a>
+                              <a href="/categories/2"><button class="menu__button"><iconify-icon class="icons" icon="mdi:rectangle-outline" width="30"></iconify-icon> Сериалы</button></a>
+                              <a href="/categories/3"><button class="menu__button"><iconify-icon class="icons" icon="ph:film-slate" width="30"></iconify-icon>Медиа</button></a>
+                            </div>
+                      </div>
+                    </div>
+                </div>
+                 <div class="grid__content">  <!-- CONTENT -->
+                    <!-- SLIDER -->
+                    <div class="slider">
+                        <h3 class="slider__title">Slider</h3>
+                        <div class="slider__wrapper"></div>
+                    </div>
+                    <!-- SUBSCRIBE -->
+                    <div class="subscribe">
+                        <div class="subscribe__wrapper">
+                            <div class="subscribe__text">
+                                <font size="60px" color="white">Подписка</font>  <font size="50px" color="red" >Kino+</font> 
+                            <p><font size="5px" color="white" >для доступа к платным фильмам</font></p>
+                            <p><font size="5px" color="#778cde" ><h4>30 дней бесплатно</h4></font></p>
+                            </div>
+                            <button class="subscribe__button">Попробовать Kino +</button>
+                           
+                        </div>
+                        <div class="subscribe__paid">
+                            <div class="subscribe__container">
+                                     <div class="subscribe__item">
+                                    <div class="subscribe__item-image">
+
+                                    </div>
+                                    <div class="subscribe__item-name">
+
+                                    </div>
+                                </div> 
+                                <div class="subscribe__item">
+                                    <div class="subscribe__item-image">
+                                        
+                                    </div>
+                                    <div class="subscribe__item-name">
+
+                                    </div>
+                                </div> 
+                                <div class="subscribe__item">
+                                    <div class="subscribe__item-image">
+                                        
+                                    </div>
+                                    <div class="subscribe__item-name">
+
+                                    </div>
+                                </div>
+                                <div class="subscribe__item">
+                                    <div class="subscribe__item-image">
+                                        
+                                    </div>
+                                    <div class="subscribe__item-name">
+
+                                    </div>
+                                </div> 
+                                <div class="subscribe__item">
+                                    <div class="subscribe__item-image">
+                                        
+                                    </div>
+                                    <div class="subscribe__item-name">
+
+                                    </div>
+                                </div>  
+                                <div class="subscribe__item">
+                                    <div class="subscribe__item-image">
+                                        
+                                    </div>
+                                    <div class="subscribe__item-name">
+
+                                    </div>
+                                </div> 
+
+                            </div>
+                            <button class="control-left"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></button>
+                            <button class="control-right"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></button>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="grid__footer"> <!-- FOOTER -->
+                    <%- include('particles/footer.ejs') %>
+                </div>
+                
+            </div>
+        </div>
+                <!-- <div class="content">
+
+
+                       
+                        
+                       
+                        
+                        
+                        <div class="innerContent">
+                            
+                        </div>
+                        
+                         -->
+
+
+
+
+                        <!-- <div class="sliders__pictures">
+                <div class="slider__wrapper">
+                    <div  class="slider__item"><img class="slider__image"
+                            src="./prevew/fantastic4.jpg"></div>
+    
+                    <div  class="slider__item"><img class="slider__image" src="./prevew/hero.webp">
+                    </div>
+                    <div  class="slider__item"><img class="slider__image"
+                            src="./prevew/ghost.webp"></div>
+                    <div  class="slider__item"><img class="slider__image"
+                            src="./prevew/martian.jpg"></div>
+                    <div  class="slider__item"><img class="slider__image" src="./prevew/thor.jpg">
+                    </div>
+                    <div class="slider__item"><img class="slider__image"
+                            src="./prevew/zombilend.jpg"></div>
+    
+                </div>
+                <button class="slider__control slider__control--l" id="right"> <i class="fa fa-angle-left fa-5x"
+                        aria-hidden="true"></i></button>
+                <button class="slider__control slider__control--r" id="left"><i class="fa fa-angle-right fa-5x"
+                        aria-hidden="true"></i></button>
+    
+            </div>
+
+        <script>
+                let maxWidth = 640;
+                let itemsCount = 1;
+    
+                console.log(document.documentElement.clientWidth)
+                addEventListener('resize', () => {
+                    if (document.documentElement.clientWidth < 760) {
+                        document.querySelector(".sliders__pictures").style.width = "450px"
+                    }
+                })
+    
+    
+                const sliders = document.querySelectorAll(".sliders__pictures")
+                sliders.forEach(slider => {
+                    let currentIndex = 0;
+                    let currentMargin = 0;
+                    const sliderWrapper = slider.querySelector(".slider__wrapper")
+                    const items = sliderWrapper.querySelectorAll(".slider__item")
+    
+                    items.forEach(items => {
+                        items.style.width = maxWidth / itemsCount + 'px';
+                    })
+                    sliderWrapper.style.width = maxWidth / itemsCount + items.length + 'px';
+    
+                    const LeftBtn = document.querySelector(".slider__control--l")
+                    const RightBtn = document.querySelector(".slider__control--r")
+                    RightBtn.addEventListener('click', () => {
+                        if (currentIndex < 5) {
+                            currentIndex++;
+                            currentMargin = currentMargin - 740;
+                            sliderWrapper.style.marginLeft = currentMargin + 'px';
+                        }
+    
+                    })
+                    LeftBtn.addEventListener('click', () => {
+                        if (currentIndex > 0) {
+                            currentIndex--;
+                            currentMargin = currentMargin + 740;
+                            sliderWrapper.style.marginLeft = currentMargin + 'px';
+                        }
+                    })
+                })
+    
+            </script> -->
+                <!-- </div> -->
+                

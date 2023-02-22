@@ -1,0 +1,100 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model items {
+  id           Int        @id @default(autoincrement())
+  name         String?    @db.VarChar(255)
+  image        String?    @db.VarChar(255)
+  genre        String?    @db.VarChar(255)
+  country      String?    @db.VarChar(255)
+  type         Int?       @db.Int
+  year         Int?       @db.Int
+  description  String?    @db.Text
+  age          Float?     @db.Float
+  producer     String?    @db.VarChar(255)
+  operator     String?    @db.VarChar(255)
+  screenwriter String?    @db.VarChar(255)
+  regicer      String?    @db.VarChar(255)
+  actor        String?    @db.VarChar(255)
+  status        String?    @db.VarChar(255)
+  video        String?    @db.Text
+  treller      String?    @db.Text
+}
+
+
+model users {
+  id       Int     @id @default(autoincrement())
+  name     String? @db.VarChar(255)
+  password String? @db.VarChar(255)
+  status   String? @db.VarChar(255)
+}
+
+model rating {
+  id       Int     @id @default(autoincrement())
+  rate     Int?    @db.Int
+  item__id Int?    @db.Int
+  name     String? @db.VarChar(255)
+}
+model comments {
+  id         Int     @id @default(autoincrement())
+  user__name String? @db.VarChar(255)
+  move__id   Int?    @db.Int
+  text       String? @db.VarChar(255)
+}
+
+model bascet {
+  id       Int     @id @default(autoincrement())
+  name     String? @db.VarChar(255)
+  Username String? @db.VarChar(255)
+  image    String? @db.VarChar(255)
+  genre    String? @db.VarChar(255)
+  country  String? @db.VarChar(255)
+  age      String? @db.VarChar(255)
+}
+
+model categories {
+  id      Int     @id @default(autoincrement())
+  name    String? @db.VarChar(255)
+}
+
+model genres {
+  id       Int     @id @default(autoincrement())
+  name     String? @db.VarChar(255)
+  image    String? @db.VarChar(255)
+}
+
+model cartoonGenres {
+  id       Int     @id @default(autoincrement())
+  name     String? @db.VarChar(255)
+  image    String? @db.VarChar(255)
+}
+
+model chat {
+  id       Int     @id @default(autoincrement())
+  text     String? @db.VarChar(255)
+}
+
+model support {
+  id       Int     @id @default(autoincrement())
+  name     String? @db.VarChar(255)
+  text     String? @db.VarChar(255)
+}
+
+model years {
+  id       Int     @id @default(autoincrement())
+  name     String? @db.VarChar(255)
+  date     Int?    @db.Int
+}
+model country {
+  id       Int     @id @default(autoincrement())
+  name     String? @db.VarChar(255)
+}

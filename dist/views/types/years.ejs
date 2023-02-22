@@ -1,0 +1,41 @@
+<%- include('../particles/header.ejs') %>
+<style>
+    html,
+    body {
+    
+      overflow-x: hidden;
+      background-image: url(/img/фон.png);
+      /* background: -webkit-linear-gradient(179deg, #afeeee, #fb46a1, #ff69b4, #afeeee);
+       */
+      width: 100%;
+      background-color: rgb(230, 228, 228);
+      height: 100%;
+      padding-top: 40px;
+    
+    }
+       </style>
+<%- include('../particles/menu.ejs') %>
+<%- include('../particles/adaptive.ejs') %>
+
+<div class="wrapper">
+
+    <div class="content3">
+        <%- include('../particles/bar__menu.ejs') %>
+        <div class="hollow"></div>        
+            <% for (let i=0; i < years.length; i++) { %>
+
+                <a href="/from/years/<%= years[i].date %>" >
+                    <div class="genre__object" id="genres__object">
+
+                        <h2 class="genres__name">
+                            <%= years[i].name %>
+                        </h2>
+                    </div>
+                </a>
+            <% } %>
+            <div class="hollow"></div>     
+    </div>
+
+</div>
+<%- include('../particles/footer.ejs') %>
+

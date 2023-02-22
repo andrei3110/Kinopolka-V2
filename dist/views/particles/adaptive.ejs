@@ -1,0 +1,21 @@
+
+<script>
+    const menu = document.querySelector(".menu")
+    const dropdownMenu = document.querySelector(".dropdown")
+    const header__name = document.querySelector(".header__name")
+    
+
+    addEventListener('resize', () => {
+        if (document.documentElement.clientWidth < 765) {
+            menu.style.display = "none";
+            dropdownMenu.style.display = "block";
+            header__name.style.display = "none";
+            
+
+        }else{
+            menu.style.display = "block";
+            dropdownMenu.style.display = "none"; 
+            header__name.style.display = "block";
+        }
+    })
+</script>

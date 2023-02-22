@@ -1,0 +1,47 @@
+<%- include('../particles/header.ejs') %>
+
+
+
+
+
+    <div class="content">
+        
+        <%- include('../particles/bar__menu.ejs') %>
+        <%- include('../particles/menu.ejs') %>
+        <div class="hollow"></div>     
+        <% if (category == 1 || category == 2) { %>    
+            <% for (let i=0; i < genres.length; i++) { %>
+
+                <a href="/from/moves/<%= genres[i].name %>" >
+                    <div class="genre__object" id="genres__object">
+
+                        <h2 class="genres__name">
+                            <%= genres[i].name %>
+                        </h2>
+        
+                        
+                        <img class="genres__image" src="/icon/<%= genres[i].image %>">
+                    </div>
+                </a>
+                
+            <% } %>
+            <% } else if (category == 3) { %>
+                <% for (let i=0; i < cartoonGenres.length; i++) { %>
+
+                    <a href="/from/cartoons/<%= cartoonGenres[i].name %>" >
+                        <div class="genre__object" id="genres__object">
+    
+                            <h2 class="genres__name">
+                                <%= cartoonGenres[i].name %>
+                            </h2>
+                            <img class="genres__image" src="/icon/<%= cartoonGenres[i].image %>">
+                        </div>
+                    </a>
+                <% } %>
+            <% } %>   
+            <div class="hollow"></div>     
+    </div>
+
+
+<%- include('../particles/footer.ejs') %>
+

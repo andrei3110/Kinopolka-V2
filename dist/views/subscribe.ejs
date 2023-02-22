@@ -1,0 +1,43 @@
+<%- include('particles/header.ejs') %>
+<style>
+    html,
+    body {
+    
+      overflow-x: hidden;
+      background-image: url(/img/фон.png);
+      /* background: -webkit-linear-gradient(179deg, #afeeee, #fb46a1, #ff69b4, #afeeee);
+       */
+      width: 100%;
+      background-color: rgb(230, 228, 228);
+      height: 100%;
+      padding-top: 40px;
+    
+    }
+       </style>
+    <div class="wrapper">
+       
+            <%- include('particles/menu.ejs') %>
+            <%- include('particles/adaptive.ejs') %>
+            <div class="sub__information" >
+                 <div class="sub__name">
+               <font size="60px" color="white">Подписка</font>  <font size="50px" color="red" >Kino+</font> 
+                <p><font size="5px" color="white" >для доступа к платным фильмам</font></p>
+            </div>
+            <div class="sub__date">
+                30 дней бесплатно
+            </div>
+            <% if (subscription == "Free" || subscription == undefined ) { %>
+            <form action="/arrange" method="post">
+                <input class="sub__button"  type="submit" value="Оформить подписку">
+            </form>
+            <% } else if (subscription == "Subscription") { %>
+                <form action="/disarrange" method="post">
+                    <input class="sub__button"  type="submit" value="отказаться от подписки">
+                </form>
+                <% } %>
+            </div>
+           
+
+</div>
+        <%- include('particles/footer.ejs') %>
+   

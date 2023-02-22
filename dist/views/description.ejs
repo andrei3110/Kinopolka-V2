@@ -1,0 +1,316 @@
+<%- include('particles/header.ejs') %>
+<style>
+	html,body {
+        background:rgb(42, 42, 42);
+   }
+   </style>
+<%- include('particles/menu.ejs') %>
+<%- include('particles/adaptive.ejs') %>
+
+            <div class="wrapper">
+                <div class="content6">
+                    <div class="header__image">
+                       <div class="gradient"><img class="fone__image" src="/img/человекПаук.jpg"></div>
+                    </div>
+                    
+                    <div class="description__film" id="films">
+                        <input type="hidden" name="nameId" value="<%= items.name %>">
+                        <img class="description__image" src="/img/<%= items.image %>">
+                        <h2 class="description__name" id="name">
+                            <%= items.name %>
+                        </h2>
+                        <span class="about__film">О фильме:</span>
+                        <div class="description__country" id="country">
+                            Страна: <span class="textViews" id="textViews">
+                                <%= items.country %>
+                            </span>
+                        </div>
+
+                        <div class="description__genre" id="genre">
+                            Жанр: <span class="textViews" id="textViews">
+                                <%= items.genre %>
+                            </span>
+                        </div>
+                        <div class="description__producer" id="producer">
+                            продюсер: <span class="textViews" id="textViews">
+                                <%= items.producer %>
+                            </span>
+                        </div>
+                        <div class="description__actor" id="actor">
+                            в главных ролях:
+                            <span class="textViews" id="textViews">
+                                <%= items.actor %>
+                            </span>
+                        </div>
+                        <div class="description__screenwriter" id="screenwriter">
+                            сценарист: <span class="textViews " id="textViews">
+                                <%= items.screenwriter %>
+                            </span>
+                        </div>
+                        <div class="description__operator" id="operator">
+                            оператор: <span class="textViews" id="textViews">
+                                <%= items.operator%>
+                            </span>
+                        </div>
+                        <div class="description__regicer" id="regicer">
+                            режиссер: <span class="textViews" id="textViews">
+                                <%= items.regicer %>
+                            </span>
+                        </div>
+                        <div class="description__year">
+                           год: <span class="textViews" id="textViews"><%= items.year %></span>
+                        </div>
+                        <div class="description__description" id="description">
+                            описание: 
+                                <p><%= items.description %></p>
+                           
+                        </div>
+                        
+                        <div class="averange" id="averange">
+                            <% if (number >= 4.5) { %>
+                            <font size="5" class="rate__name">рейтинг:</font>
+                               
+                                    <div class="rate__count five">
+                                        <span class="averangeText" id="averangeText">
+                                            <%= number %> 
+                                        </span>
+                                        
+                                    </div>
+
+                            <% } else if(number >= 3.5) { %>   
+                                <font size="5" class="rate__name">рейтинг:</font>
+                               
+                                    <div class="rate__count four">
+                                        <span class="averangeText" id="averangeText">
+                                           <%= number %> 
+                                        </span>
+                                        
+                                    </div>
+                            <% } else if( number >= 2 ) { %> 
+                                <font size="5" class="rate__name">рейтинг:</font>
+                               
+                                <div class="rate__count three">
+                                    <span class="averangeText" id="averangeText">
+                                       <%= number %> 
+                                    </span>
+                                    
+                                </div>
+                            <% } else { %>
+                                <font size="5" class="rate__name">рейтинг:</font>
+                               
+                                <div class="rate__count two">
+                                    <span class="averangeText" id="averangeText">
+                                       <%= number %> 
+                                    </span>
+                                    
+                                </div>
+                            <% } %>
+                            <div class="voices" id="voices">
+                            всего голосов:<span class="textVoises" id="textViews">
+                                <%= voices %>
+                            </span></div>
+                        </div>  
+                        
+
+                            <% if (items.status == "бесплатно") { %>
+                                <a href="/forFree/<%= items.id %>"><button class="watch__for__Free">Смотреть фильм бесплатно</button></a>
+                                <% } else { %>
+                                <a href="/bySubscribe/<%= items.id %>"><button class="watch__by__subscribe">Смотреть фильм по подписке</button></a>
+                                <% } %>
+
+                        <div class="films__stills">
+                            <div class="films__stills__wrapper">
+                    <div class="films__stills__item"><img class="films__stills__image"src="/prevew/fantastic4.jpg"></div>
+                    <div class="slider__item"><img class="films__stills__image"src="/prevew/hero.webp"></div>
+                    <div  class="slider__item"><img class="films__stills__image"src="/prevew/ghost.webp"></div>
+                    <div  class="slider__item"><img class="films__stills__image"src="/prevew/martian.jpg"></div>
+                    <div  class="slider__item"><img class="films__stills__image"src="/prevew/thor.jpg"></div>
+                    <div class="slider__item"><img class="films__stills__image"src="/prevew/zombilend.jpg"></div>
+                            </div>
+                            <button class="film__slider__control film__slider__control--l" id="right"> <i class="fa fa-angle-left fa-5x" aria-hidden="true"></i></button>
+                            <button class="film__slider__control film__slider__control--r" id="left"><i class="fa fa-angle-right fa-5x" aria-hidden="true"></i></button>
+                            
+                    </div>
+                    <script>
+                        let maxWidth = 400;
+                        let itemsCount = 1;
+        
+        console.log(document.documentElement.clientWidth)
+        addEventListener('resize' , () => {
+            if(document.documentElement.clientWidth< 760){
+                document.querySelector(".films__stills").style.width = "450px"
+            }
+        })
+        
+        
+        const sliders = document.querySelectorAll(".films__stills")
+        sliders.forEach(slider => {
+            let currentIndex = 0;
+            let currentMargin = 0;
+            const sliderWrapper = slider.querySelector(".films__stills__wrapper")
+            const items = sliderWrapper.querySelectorAll(".films__stills__item")
+        
+            items.forEach(items => {
+                items.style.width = maxWidth / itemsCount + 'px';
+            })
+            sliderWrapper.style.width = maxWidth / itemsCount + items.length + 'px';
+        
+            const LeftBtn  = document.querySelector(".film__slider__control--l")
+            const RightBtn = document.querySelector(".film__slider__control--r")
+            RightBtn.addEventListener('click', () => {
+                if(currentIndex < 4 ){ 
+                    currentIndex++;
+                    currentMargin = currentMargin - 400;
+                    sliderWrapper.style.marginLeft = currentMargin + 'px';
+                }
+                
+            })
+            LeftBtn.addEventListener('click', () => {
+                if(currentIndex > 0 ){
+                    currentIndex--;
+                    currentMargin = currentMargin + 400;
+                    sliderWrapper.style.marginLeft = currentMargin + 'px';
+                }
+            })
+        })
+        
+                </script>
+                    </div>
+
+
+                    
+                        <div class="ratingForm">
+                            
+                            <form action="/rating/<%= items.id %>" method="post">
+                                <input type="hidden" name="item__id" value="<%= items.id %>">
+                                <input type="hidden" name="item__name" value="<%= items.name %>">
+
+                                <% if (auth) { %>
+
+                                    <div class="container" id="container">
+                                        
+                                        <div class="post">
+                                            <div class="text">Thanks for rating us !</div>
+                                            <!-- <div class="edit">EDIT</div> -->
+                                        </div>
+                                        <div class="star-widget">
+                                            <input type="radio" name="rate" id="rate-5" value="5"><label for="rate-5"
+                                                class="fa fa-star" aria-hidden="true">
+                                            </label>
+                                            <input type="radio" name="rate" id="rate-4" value="4"> <label for="rate-4"
+                                                class="fa fa-star" aria-hidden="true">
+
+                                            </label>
+                                            <input type="radio" name="rate" id="rate-3" value="3"><label for="rate-3"
+                                                class="fa fa-star" aria-hidden="true">
+                                            </label>
+                                            <input type="radio" name="rate" id="rate-2" value="2"><label for="rate-2"
+                                                class="fa fa-star" aria-hidden="true">
+
+                                            </label>
+                                            <input type="radio" name="rate" id="rate-1" value="1"><label for="rate-1"
+                                                class="fa fa-star" aria-hidden="true">
+
+                                            </label>
+
+
+                                            <header>
+
+                                                <div class="textarea">
+                                                    <textarea cols="30" placeholder="Describe your  experense..."
+                                                        type="text" name="text"></textarea>
+                                                </div>
+                                                <div class="Btn">
+                                                    <button type="submit" id="button">Post</button>
+                                                </div>
+                                            </header>
+
+                                        </div>
+                                        
+                                    </div>
+                            </form>
+                        </div>
+                </div>
+
+                <% if (mark) { %>
+                    <script>
+
+                        const post = document.querySelector(".post")
+                        const widget = document.querySelector(".star-widget")
+
+
+                        i == true;
+                        widget.style.display = "block";
+                        post.style.display = "none";
+
+
+                    </script>
+                    <% } else { %>
+                        <script>
+
+                            const button = document.getElementById("button")
+                            const post = document.querySelector(".post")
+                            const widget = document.querySelector(".star-widget")
+                            const editBtn = document.querySelector(".edit")
+                            let i = true;
+
+
+                            widget.style.display = "none";
+                            post.style.display = "block";
+
+                            button.addEventListener("click", () => {
+                                widget.style.display = "none";
+                                post.style.display = "block";
+                                i = false;
+                                return false;
+                            })
+                        </script>
+
+                        <% } %>
+                            <% } %>
+
+                                <div class="content2">
+                                    <div class="comment" id="comment">
+                                       
+                                        <div class="commentName">Комментарии:</div>
+                                        <hr style="background-color: rgb(95, 95, 95);">
+                                        <% for (let i=0; i < comments.length; i++) { %>
+                                            <div class="comment__box">
+                                                <div name="userName" class="commentUsername">
+                                                    <%= comments[i].user__name %>
+                                                </div>
+                                                <div name="text" class="commentText">
+                                                    <%= comments[i].text %>
+                                                </div>
+
+                                                <% if (auth) { %>
+
+                                                    <form action="/des__film/<%= items.id %>" method="post">
+                                                        <input type="hidden" name="commentId" value="<%= comments[i].id %>">
+                                                        <input type="hidden" name="itemsID" value="<%= items.id %>">
+                                                        <input type="hidden" name="commentName" value="<%= comments[i].userName %>">
+                                                        <button class="deleteComment" type="submit"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+                                                    </form>
+
+                                                 <% } %>
+                                            </div>
+                                        <% } %>
+                                    
+                                    </div>
+                                    
+                                </div>
+</div>
+<footer class="dark__footer">
+     
+    <div class="About">
+        About us:
+        <hr>
+    </div>
+    <div class="contacts">
+    Telegramm: @AndreiChebanov
+    <br>
+    Gmail: andreichebaniv98@gmail.com
+    </div>
+    
+</footer>
+            

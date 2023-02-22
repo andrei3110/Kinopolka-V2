@@ -1,0 +1,48 @@
+<% if (dark__light) { %>
+
+    <script>
+        const country = document.querySelector('#country').classList;
+        const description = document.querySelector('#description').classList;
+        const producer = document.querySelector('#producer').classList;
+        const regicer = document.querySelector('#regicer').classList;
+        const operator = document.querySelector('#operator').classList;
+        const screenwriter = document.querySelector('#screenwriter').classList;
+        const genre = document.querySelector('#genre').classList;
+        const actor = document.querySelector('#actor').classList;
+        const films = document.querySelector('#films').classList;
+        const textViews = document.querySelector('.textViews').classList;
+        const name = document.querySelector('#name').classList;
+        const averange = document.querySelector('#averange').classList;
+        const averangeText = document.querySelector('#averangeText').classList;
+        const voices = document.querySelector('#voices').classList;
+        const container = document.querySelector('#container').classList;
+        const dark__fone = document.querySelector('#fone').classList;
+        const comment = document.querySelector('#comment').classList;
+        const commentText = document.querySelector('.commentText').classList;
+        country.toggle('dark__description__country');
+        description.toggle('dark__description__description');
+        producer.toggle('dark__description__producer');
+        regicer.toggle('dark__description__regicer');
+        operator.toggle('dark__description__operator');
+        screenwriter.toggle('dark__description__screenwriter');
+        genre.toggle('dark__description__genre');
+        actor.toggle('dark__description__actor');
+        films.toggle('dark__description__film');
+        textViews.toggle('dark__textViews');
+        name.toggle('dark__description__name');
+        averange.toggle('dark__averange');
+        averangeText.toggle('dark__averangeText');
+        voices.toggle('dark__voices');
+        container.toggle('dark__container');
+        dark__fone.toggle('dark__body__fone');
+        comment.toggle('dark__comment');
+        
+        
+
+    </script>
+    <% } else { %>
+        <script>
+
+
+        </script>
+        <% } %>

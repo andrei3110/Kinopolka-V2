@@ -1,0 +1,52 @@
+<%- include('particles/header.ejs') %>
+<style>
+    html,
+    body {
+    
+      overflow-x: hidden;
+      background-image: url(/img/фон.png);
+      /* background: -webkit-linear-gradient(179deg, #afeeee, #fb46a1, #ff69b4, #afeeee);
+       */
+      width: 100%;
+      background-color: rgb(230, 228, 228);
+      height: 100%;
+      padding-top: 40px;
+    
+    }
+       </style>
+    <%- include('particles/menu.ejs') %>
+    <%- include('particles/adaptive.ejs') %>
+        <div class="wrapper">
+
+            <div class="content">
+
+                <div class="film">
+                    <!-- <%- include('particles/navigation.ejs') %> -->
+                    <% for (let i=0; i < bascet.length; i++) { %>
+
+                        <a href="/des__film/<%= bascet[i].id %>" class="descrip">
+                            <div class="film__object">
+                                <h2 class="film__name">
+                                    <%= bascet[i].name %>
+                                </h2>
+                                <div class="film__country">
+                                    <%= bascet[i].country %>
+                                </div>
+
+                                <div class="film__genre">
+                                    <%= bascet[i].genre %>
+                                </div>
+                                <img class="film__image" src="/img/<%= bascet[i].image %>">
+                                <div>
+                                    
+                                    <a href="/delete__Video/<%= bascet[i].id %>"><button class="DeleteVideo"
+                                            type="submit">Убрать</button></a>
+
+                                </div>
+                            </div>
+                        </a>
+                        <% } %>
+                </div>
+            </div>
+            <%- include('particles/footer.ejs') %>
+        </div>

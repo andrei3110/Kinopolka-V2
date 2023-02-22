@@ -1,0 +1,22 @@
+<div class="bar__menu">
+    <% if (active=="genre" ){ %>
+        <button class="bar__btn genre__active"><a href="/byGenre">Жанры</a></button>
+        <button class="bar__btn"><a href="/years">Годы</a></button>
+        <button class="bar__btn"> <a href="/years"><a href="/country">Страны</a></button>
+    <% } else if (active=="year" ) { %>
+        <button class="bar__btn"><a href="/byGenre">Жанры</a></button>
+        <button class="bar__btn year__active"><a href="/years">Годы</a></button>
+        <button class="bar__btn"><a href="/country">Страны</a></button>
+    <% } else if (active=="country" ) { %>
+        <button class="bar__btn"><a href="/byGenre">Жанры</a></button>
+        <button class="bar__btn"><a href="/years">Годы</a></button>
+        <button class="bar__btn country__active"><a href="/country">Cтраны</a></button>
+    <% } else { %>
+        <button class="bar__btn"><a href="/byGenre">Жанры</a></button>
+        <button class="bar__btn"><a href="/years">Годы</a></button>
+        <button class="bar__btn"><a href="/country">Страны</a></button>
+    <% } %>
+        <a><button class="bar__btn">Фильмы</button></a>
+        <a><button class="bar__btn">Сериалы</button></a>
+        <a><button class="bar__btn">Мультфильмы</button></a>
+</div>

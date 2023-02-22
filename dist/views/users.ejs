@@ -1,0 +1,44 @@
+<%- include('particles/header.ejs') %>
+<style>
+    html,
+    body {
+    
+      overflow-x: hidden;
+      background-image: url(/img/фон.png);
+      /* background: -webkit-linear-gradient(179deg, #afeeee, #fb46a1, #ff69b4, #afeeee);
+       */
+      width: 100%;
+      background-color: rgb(230, 228, 228);
+      height: 100%;
+      padding-top: 40px;
+    
+    }
+       </style>
+<%- include('particles/menu.ejs') %>
+<%- include('particles/adaptive.ejs') %>
+
+<div class="wrapper">
+
+    <div class="content">
+
+        <div class="film">
+
+            <% for (let i=0; i < users.length; i++) { %>
+                
+                    <div class="users__object" id="users__object">
+                        <h2 class="users__name">
+                            имя: <%= users[i].name %>
+                        </h2>
+                        <h2 class="users__name">
+                            пароль: <%= users[i].password %>
+                        </h2>
+                    </div>
+                </a>
+                <a  href="/delete/users/<%= users[i].id %>"><button class="delete__users"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button></a>
+            <% } %>
+        </div>
+        
+    </div>
+</div>
+<%- include('particles/footer.ejs') %>
+

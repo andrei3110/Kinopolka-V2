@@ -1,0 +1,110 @@
+<%- include('particles/header.ejs') %>
+<style>
+    html,
+    body {
+    
+      overflow-x: hidden;
+      background-image: url(/img/фон.png);
+      /* background: -webkit-linear-gradient(179deg, #afeeee, #fb46a1, #ff69b4, #afeeee);
+       */
+      width: 100%;
+      background-color: rgb(230, 228, 228);
+      height: 100%;
+      padding-top: 40px;
+    
+    }
+       </style>
+<div class="wrapper1">
+    <div class="content4">
+    <!-- <%- include('particles/navigation.ejs') %> -->
+    
+<%- include('particles/menu.ejs') %>
+        <%- include('particles/adaptive.ejs') %>
+        <form action="/home" method="post">
+            <input name="name" class="search__films" placeholder="введите название фильма">
+        <div class="genres__btn">
+
+        </div>
+        
+        <input type="submit" class="search__films__button">
+    
+</form>
+
+    
+<form action="/bovik" method="post"><input type="submit" class="search__of__genre bovik" name="name" value="боевик"></form>
+            <form action="/adventure" method="post"><input type="submit" class="search__of__genre adventure" name="name" value="приключения"></form>
+            <form action="/triller" method="post"><input type="submit" class="search__of__genre triller" name="name" value="триллер"></form>
+            <form action="/horror" method="post"><input type="submit" class="search__of__genre horror" name="name" value="ужасы"></form>
+            <form action="/drama" method="post"><input type="submit" class="search__of__genre dramma" name="name" value="драмма"></form>
+            <form action="/comedy" method="post"><input type="submit" class="search__of__genre comedy" name="name" value="комедия"></form>
+            <form action="/melodrama" method="post"><input type="submit" class="search__of__genre melodrama" name="name" value="мелодрамма"></form>
+            <form action="/tragedy" method="post"><input type="submit" class="search__of__genre tragedy" name="name" value="трагедия"></form>
+            <form action="/fantastic" method="post"><input type="submit" class="search__of__genre fantastic" name="name" value="фантастика"></form>
+            <form action="/anime" method="post"><input type="submit" class="search__of__genre anime" name="name" value="аниме"></form>
+            <form action="/mistyc" method="post"><input type="submit" class="search__of__genre mistyc" name="name" value="мистика"></form>
+            <form action="/detective" method="post"><input type="submit" class="search__of__genre detective" name="name" value="детектив"></form>
+            <form action="/child" method="post"><input type="submit" class="search__of__genre child" name="name" value="детский"></form>
+            <form action="/family" method="post"><input type="submit" class="search__of__genre family" name="name" value="семейный"></form>
+            <form action="/istoric" method="post"><input type="submit" class="search__of__genre istoric" name="name" value="исторический"></form>
+<div>
+
+</div>
+    
+        
+</div>
+
+
+
+
+           
+        </div>
+       
+        <div class="content1">
+    <% if (searchMove) { %>
+        <span class="scroll-icon"><i class="fa fa-angle-up fa-4x" aria-hidden="true"></i></span>
+        <div class="scroll">Scroll Up</div>
+        
+        <% for (let i=0; i < items.length; i++) { %>
+    
+            <a href="/des__film/<%= items[i].id %>" class="descrip">
+                <div class="film__object" id="film__object">
+    
+                    <h2 class="film__name">
+                        <%= items[i].name %>
+                    </h2>
+                    <div class="film__country">
+                        <%= items[i].country %>
+                    </div>
+                    <div class="film__genre">
+                        <%= items[i].genre %>
+                    </div>
+                    <img class="film__image" src="/img/<%= items[i].image %>">
+                    <div>
+    
+                            <% if (auth) { %>
+                                <form action="/save__Video" method="post">
+    
+                                    <input type="hidden" value="<%= items[i].name %>" name="name">
+                                    <input type="hidden" value=" <%= items[i].country %>"name="country">
+                                    <input type="hidden" value="<%= items[i].star %>" name="star">
+                                    <input type="hidden" value="<%= items[i].genre %>" name="genre">
+                                    <input type="hidden" value="<%= items[i].image %>" name="image">
+                                    <!-- <input type="hidden" value="<%= items[i].age %>" name="age"> -->
+                                    <input class="InBascet" value=" В избранное" type="submit">
+    
+                                </form>
+                                <% if (admin) { %>
+                                   <a href="/delete__moves/<%= items[i].id %>"><button class="delete__moves"><i class="fa fa-trash fa-1x" aria-hidden="true"></i></button></a> 
+                                <% } %>
+                            <% } %>
+                    </div>
+                </div>
+            </a>
+        <% } %>
+    <% } else { %>
+        <span class="search-icon"><i class="fa fa-search fa-4x" aria-hidden="true"></i></span>
+        <div class="scroll">not found</div>
+    <% } %>
+        
+    </div>
+    <%- include('particles/footer.ejs') %>
