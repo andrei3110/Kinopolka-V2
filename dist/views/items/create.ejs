@@ -1,24 +1,10 @@
-<%- include('particles/header.ejs') %>
-<style>
-    html,
-    body {
-    
-      overflow-x: hidden;
-      background-image: url(/img/фон.png);
-      /* background: -webkit-linear-gradient(179deg, #afeeee, #fb46a1, #ff69b4, #afeeee);
-       */
-      width: 100%;
-      background-color: rgb(230, 228, 228);
-      height: 100%;
-      padding-top: 40px;
-    
-    }
-       </style>
-    <div class="wrapper">
+<%- include('../particles/header.ejs') %>
+
+
         <div class="content">
            
 
-                <%- include('particles/menu.ejs') %>
+                <%- include('../particles/menu.ejs') %>
                 
                 <div class="addName">Добавление фильма</div>
                     <form action="/AddItems" method="post">
@@ -56,5 +42,4 @@
                     
                    
         </div>
-        <%- include('particles/footer.ejs') %>
-    </div>
+        <%- include('../particles/footer.ejs') %>

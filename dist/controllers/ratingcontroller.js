@@ -61,7 +61,7 @@ class RatingController {
             }
             let average = summ / k;
             let rounded = Math.round(average * 10) / 10;
-            res.render('description', {
+            res.render('items/show', {
                 mark: req.session.mark,
                 admin: req.session.admin,
                 auth: req.session.auth,

@@ -1,10 +1,10 @@
-.genres__container {
+.tags {
   margin-top: 80px;
   position: relative;
   border: 2px solid #777;
 }
 
-div.searchForGenresBtn {
+div.tags__wrapper {
   position: relative;
   background-color: #a5a5a5;
   border-left: 2px solid #777;
@@ -38,7 +38,7 @@ div.searchForGenresBtn {
 
 }
 
-div.searchForGenresBtn form {
+div.tags__wrapper form {
   display: inline-block;
   color: white;
   text-align: center;
@@ -47,10 +47,10 @@ div.searchForGenresBtn form {
   
 }
 
-div.searchForGenresBtn form:hover {
+div.tags__wrapper form:hover {
   background-color: #777;
 }
-.search__of__genre {
+.tags__form {
   position:relative;
   left:10%;
   margin: 0 auto;
@@ -62,7 +62,7 @@ div.searchForGenresBtn form:hover {
   color: white;
   font-family: Century Gothic;
 }
-.allgenre{
+.tags__item{
   position:relative;
   height: 50px;
    border: none;

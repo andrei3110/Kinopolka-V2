@@ -1,19 +1,21 @@
-body{
-  margin:0;
+body {
+  margin: 0;
   overflow-x: hidden;
   background-color: rgb(243, 243, 243);
 }
-.header{
-  width:100%;
+
+.header {
+  width: 100%;
   height: 90px;
   position: fixed;
-  top:0px;
-  margin-bottom:10px;
+  top: 0px;
+  margin-bottom: 10px;
   z-index: 6;
   border-radius: 0px 0px 10px 10px;
   background-color: rgb(45, 45, 45);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
+
 .header__name {
   color: rgb(200, 199, 199);
   font-size: 35px;
@@ -32,61 +34,63 @@ body{
   border-radius: 10px 10px 0px 0px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-.content{
+
+.content {
   max-width: 1536px;
-  margin:0 auto;
+  margin: 0 auto;
   margin-top: 100px;
-  min-height:100vh;
+  min-height: 100vh;
   background-color: rgb(255, 255, 255);
 }
 
- /* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:250px 1fr;
-  grid-template-rows: minmax(100vh) 100px;
-  grid-template-areas: 
-                      "side content"
-                      "footer footer";
-  color:white;
-  
+.content__auth {
+  padding-top: 200px;
+  max-width: 1536px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
 }
-.grid__header{
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: minmax(100vh) 100px;
+  grid-template-areas:
+    "side content";
+  color: white;
+
+}
+
+.grid__header {
   text-align: center;
   grid-area: header;
   background-color: rgb(165, 245, 143);
-  
+
 }
-.grid__side{
+
+.grid__side {
   text-align: center;
-  margin-top:10px;
+  margin-top: 10px;
   background-color: rgb(255, 255, 255);
   grid-area: side;
   border-right: 2px solid rgb(165, 165, 165);
-  
+
 }
-.grid__content{
+
+.grid__content {
   background-color: rgb(255, 255, 255);
   text-align: center;
-  margin-top:10px;
-  padding:20px;
+  margin-top: 10px;
+  padding: 20px;
   grid-area: content;
-
-}
-.grid__footer{
-  text-align: center;
-  margin-top:10px;
-  grid-area: footer;
-
-  background-color: rgb(255, 255, 255);
-}
-.sidebar{
-  width:100%;
- height:500px;
- background-color: #ffffff;
- border-right: 2px solid rgb(165, 165, 165);
-  position:sticky;
-  top:0px;
 }
 
-
+.sidebar {
+  width: 100%;
+  height: 500px;
+  background-color: #ffffff;
+  border-right: 2px solid rgb(165, 165, 165);
+  position: sticky;
+  top: 0px;
+}

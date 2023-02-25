@@ -8,8 +8,10 @@ const prisma: PrismaClient = new PrismaClient();
 export class NotificationController {
     async renderNotification(req: Request, res: Response) {
         const chat = await prisma.chat.findMany({})
-        res.render('notification',{
+        const categories = await prisma.categories.findMany({})
+        res.render('account/notifications',{
             'chat' : chat,
+            'categories':categories,
             auth: req.session.auth,
             admin: req.session.admin,
             searchMove:req.session.searchMove,

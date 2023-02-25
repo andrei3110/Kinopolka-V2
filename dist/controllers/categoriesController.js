@@ -62,6 +62,7 @@ class CategoriesController {
                     name,
                 }
             });
+            const categories = yield prisma.categories.findMany({});
             console.log(req.session.category);
             const count = yield prisma.items.count({
                 where: {
@@ -91,7 +92,6 @@ class CategoriesController {
                         type: Number(req.session.category)
                     }
                 });
-                console.log(req.session.category);
                 let k = 0;
                 for (let i = 0; i < items.length; i++) {
                     k = k + 1;
@@ -104,11 +104,13 @@ class CategoriesController {
                     dark__light: req.session.dark__light,
                     category: req.session.category,
                     count: req.session.count,
+                    'categories': categories,
                     'items': items,
                     'genres': genres,
                 });
             }
             else {
+                const categories = yield prisma.categories.findMany({});
                 const items = yield prisma.items.findMany({
                     where: {
                         genre: {
@@ -125,6 +127,7 @@ class CategoriesController {
                     dark__light: req.session.dark__light,
                     category: req.session.category,
                     count: req.session.count,
+                    'categories': categories,
                     'items': items,
                     'genres': genres,
                 });

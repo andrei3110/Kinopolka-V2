@@ -31,16 +31,9 @@ app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
 app.get("/", (req, res) => {
-    req.session.category = 1;
-    res.render('home', {
-        auth: req.session.auth,
-        admin: req.session.admin,
-        searchMove: req.session.searchMove,
-        category: req.session.category,
-        dark__light: req.session.dark__light,
-    });
+    itemsController.home(req, res);
 });
-app.get("/notification__btn", (req, res) => {
+app.get("/notifications", (req, res) => {
     notificationController.renderNotification(req, res);
 });
 app.post("/sendMess", (req, res) => {
@@ -109,7 +102,7 @@ app.post("/login", (req, res) => {
 app.get("/enter", (req, res) => {
     authController.renderLogin(req, res);
 });
-app.get("/add", (req, res) => {
+app.get("/items/create", (req, res) => {
     itemsController.Add(req, res);
 });
 app.post("/AddItems", (req, res) => {
@@ -133,13 +126,13 @@ app.get("/home", (req, res) => {
 app.get("/bascet__btn", (req, res) => {
     itemsController.bascet(req, res);
 });
-app.get("/users__btn", (req, res) => {
+app.get("/users", (req, res) => {
     itemsController.users(req, res);
 });
 app.get("/delete/users/:id", (req, res) => {
     itemsController.delete__users(req, res);
 });
-app.get("/bascet", (req, res) => {
+app.get("/cart", (req, res) => {
     itemsController.bascet(req, res);
 });
 app.get("/description", (req, res) => {

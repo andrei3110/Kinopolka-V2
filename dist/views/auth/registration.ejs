@@ -1,31 +1,14 @@
-<%- include('particles/header.ejs') %>
-<style>
-    html,
-    body {
-    
-      overflow-x: hidden;
-      background-image: url(/img/фон.png);
-      /* background: -webkit-linear-gradient(179deg, #afeeee, #fb46a1, #ff69b4, #afeeee);
-       */
-      width: 100%;
-      background-color: rgb(230, 228, 228);
-      height: 100%;
-      padding-top: 40px;
-    
-    }
-       </style>
-    <%- include('particles/menu.ejs') %>
-    <%- include('particles/adaptive.ejs') %>
-        <div class="wrapper">
-            <div class="content">
-                <%- include('particles/navigation.ejs') %>
-                <div class="form">
+<%- include('../particles/header.ejs') %>
+            <div class="content__auth">
+
                     <form action="/register/Form" method="post">
                         <div class="reg">
-                            <div><i class="fa fa-user-circle fa-10x icon" aria-hidden="true"></i></div>
-                            <div class="circle"></div>
-
-                            <span class="input__addon__name"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                            <div class="auth__decoration">
+                                <div><i class="fa fa-user-circle fa-10x icon" aria-hidden="true"></i></div>
+                                <div class="circle"></div>
+                            </div>
+                            <div class="vhod__block-inputs">
+                                <span class="input__addon__name"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
                             <input class="input__reg" name="name" placeholder="Введите имя">
                             <% if(auth == false) { %>
                                 <div class="error__name">
@@ -39,9 +22,8 @@
                                 </span>
                                 <input class="input__reg" id="Textinput" name="password" type="password" placeholder="Введите пароль">
                             <% } %>
-                            <!-- <input class="input__reg" name="login" placeholder="@UserName"> -->
-                            
-                            
+                            </div>
+                        
                             <script>
                                 document.getElementById('Textinput').value="";
                             </script>
@@ -51,11 +33,7 @@
 
                     </form>
 
-
-
-                </div>
               
-                <div class="body__fone__auth"></div>
+
             </div>
-            <%- include('particles/footer.ejs') %>
-        </div>
+            <%- include('../particles/footer.ejs') %>

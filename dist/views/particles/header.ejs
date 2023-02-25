@@ -3,13 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    
+
     <title>Kino-polka</title>
-    <link rel="icon" href="/img/иконка.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
-    <link href="/css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/icon.jpg" type="image/x-icon">
+
+    <link href="/css/style1.css" rel="stylesheet">
     <link href="/css/genresButton.css" rel="stylesheet">
     <link href="/css/particles.css" rel="stylesheet">
     <link href="/css/authForm.css" rel="stylesheet">
@@ -17,78 +16,72 @@
     <link href="/css/genresObjects.css" rel="stylesheet">
     <link href="/css/filmObject.css" rel="stylesheet">
     <link href="/css/buttons.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="/css/media1.css" rel="stylesheet">
+    <link href="/css/media2.css" rel="stylesheet">
 
     <div class="header">
-        
-        <!-- <form action="/home" method="post">
+
+        <form action="/home" method="post" class="search">
             <input name="name" class="search__films" placeholder="введите название фильма">
-            <div class="genres__btn">
+            <button type="submit" class="search__films__button"><span class="search-icon"><i class="fa fa-search fa-2x" aria-hidden="true"></i></span></button>
+        </form>
 
-
-            </div>
-
-            <input type="submit" class="search__films__button">
-
-
-        </form> -->
-       
         <div class="header__name">Kino-polka</div>
     </div>
+
     <% if (auth) { %>
-        <a href="/Logout"><button class=" btn LogIn">выход</button></a>
-        
+    	<a href="/logout"><button class=" btn LogIn">выход</button></a>
     <% } else { %>
-        <a href="/enter"><button class=" btn LogIn">вход</button></a>
-        <!-- <form action="/subscribe" method="post"><input type="submit" class="subscribe" value="Попробовать Kino +"></form> -->
+    	<a href="/enter"><button class=" btn LogIn">вход</button></a>
     <% } %>
+
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Выпадающий</button>
+        <button class="dropbtn"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></button>
+
         <div id="myDropdown" class="dropdown-content">
             <% if (auth) { %>
 
-                <% if (admin) { %>
-                    <a href="/add"><button class="btn add">добавить</button></a>
-                    <a href="/bascet__btn"><button class="btn bascet">корзина</button></a>
-                    <a href="/users__btn"><button class="btn users">пользователи</button></a>
-                    <a href="/notification__btn"><button class="btn notification">уведомление</button></a>
-                    <!-- <form action="/subscribe" method="post"><input type="submit" class="admin__subscribe" value="Попробовать Kino +"></form> -->
-                <% } else { %>
-                        <a href="/bascet__btn"><button class="btn bascet__simple"><i class="fa fa-bookmark" aria-hidden="true"></i></button></a>
-                        <a href="/notification__btn"><button class="btn notification__simple">уведомление</button></a>
-                        <!-- <form action="/subscribe" method="post"><input type="submit" class="users__subscribe" value="Попробовать Kino +"></form> -->
-                <% } %>
-                <a href="/Logout"><button class=" btn LogIn">выход</button></a>
-                
-            <% } else { %>
-                    <a href="/enter"><button class=" btn LogIn">вход</button></a>
-                    <!-- <form action="/subscribe" method="post"><input type="submit" class="subscribe" value="Попробовать Kino +"></form> -->
+				<% if (admin) { %>
+					<a href="/items/create"><button class="btn add">добавить</button></a>
+					<a href="/cart"><button class="btn bascet">корзина</button></a>
+					<a href="/users"><button class="btn users">пользователи</button></a>
+					<a href="/notifications"><button class="btn notification">уведомление</button></a>
+					<!-- <form action="/subscribe" method="post"><input type="submit" class="admin__subscribe" value="Попробовать Kino +"></form> -->
+				<% } else { %>
+					<a href="/cart"><button class="btn bascet__simple"><i class="fa fa-bookmark" aria-hidden="true"></i></button></a>
+					<a href="/notifications"><button class="btn notification__simple">уведомление</button></a>
+					<!-- <form action="/subscribe" method="post"><input type="submit" class="users__subscribe" value="Попробовать Kino +"></form> -->
+				<% } %>
+
+				<a href="/logout"><button class=" btn LogIn">выход</button></a>
+
+			<% } else { %>
+				<a href="/enter"><button class=" btn LogIn">вход</button></a>
+				<!-- <form action="/subscribe" method="post"><input type="submit" class="subscribe" value="Попробовать Kino +"></form> -->
             <% } %>
         </div>
-      </div>
+    </div>
 
-      <script>
-        /* Когда пользователь нажимает на кнопку,
-переключение между скрытием и отображением раскрывающегося содержимого */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+    <script>
+        const dropBtn = document.querySelector('.dropbtn')
 
-// Закройте выпадающее меню, если пользователь щелкает за его пределами
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-      </script>
+        dropBtn.addEventListener('click', function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        })
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>

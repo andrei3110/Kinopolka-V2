@@ -56,6 +56,8 @@ export class CategoriesController {
                 name,
             }
         });
+        const categories =  await prisma.categories.findMany({
+        });
         console.log(req.session.category)
         const count = await prisma.items.count({
             where:{
@@ -88,7 +90,7 @@ export class CategoriesController {
             }
         
         });
-        console.log(req.session.category)
+
         let k = 0;
         for (let i = 0; i < items.length; i++) {
             k = k + 1
@@ -101,10 +103,12 @@ export class CategoriesController {
             dark__light: req.session.dark__light,
             category: req.session.category,
             count: req.session.count,
+            'categories':categories,
             'items': items,
             'genres': genres,
-        });
+        })
         }else{
+            const categories =  await prisma.categories.findMany({})
             const items = await prisma.items.findMany({
                 where: {
                     genre: {
@@ -123,6 +127,7 @@ export class CategoriesController {
                 dark__light: req.session.dark__light,
                 category: req.session.category,
                 count: req.session.count,
+                'categories':categories,
                 'items': items,
                 'genres': genres,
             });

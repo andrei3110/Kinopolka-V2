@@ -1,0 +1,34 @@
+<%- include('../particles/header.ejs') %>
+
+
+
+    <div class="content">
+        <%- include('../particles/menu.ejs') %>
+        <div class="film">
+            <% for (let i=0; i < bascet.length; i++) { %>
+
+            <a href="/items/<%= bascet[i].id %>/show" class="descrip">
+                <div class="film__object">
+                    <h2 class="film__name">
+                        <%= bascet[i].name %>
+                    </h2>
+                    <div class="film__country">
+                        <%= bascet[i].country %>
+                    </div>
+
+                    <div class="film__genre">
+                        <%= bascet[i].genre %>
+                    </div>
+                    <img class="film__image" src="/img/<%= bascet[i].image %>">
+                    <div>
+
+                        <!-- <a href="/delete__Video/<%= bascet[i].id %>"><button class="DeleteVideo" type="submit">Убрать</button></a> -->
+
+                    </div>
+                </div>
+            </a>
+            <% } %>
+        </div>
+    </div>
+
+    <%- include('../particles/footer.ejs') %>

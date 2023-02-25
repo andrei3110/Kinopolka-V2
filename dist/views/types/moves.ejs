@@ -1,77 +1,69 @@
 <%- include('../particles/header.ejs') %>
 
+<div class="content">
+    <%- include('../particles/tags.ejs') %>
+    <%- include('../particles/menu.ejs') %>
 
+    <div class="film">
 
+        <% for (let i=0; i < items.length; i++) { %>
 
-    <div class="content"> 
-        <%- include('../particles/menu.ejs') %>
-<%- include('../particles/bar__menu.ejs') %>
-        <div class="film">
-            
-            <% for (let i=0; i < items.length; i++) { %>
+        <a href="/des__film/<%= items[i].id %>" class="descrip">
+            <div class="film__object" id="film__object">
 
-                <a href="/des__film/<%= items[i].id %>" class="descrip">
-                    <div class="film__object" id="film__object">
+                <h2 class="film__name">
+                    <%= items[i].name %>
+                </h2>
+                <div class="film__country">
+                    <%= items[i].country %>
+                </div>
+                <div class="film__genre">
+                    <%= items[i].genre %>
+                </div>
+                <% if (items[i].status == "бесплатно") { %>
+                <div class="film__status free">
+                    <%= items[i].status %>
+                </div>
+                <% } else { %>
+                <div class="film__status sub">
+                    <%= items[i].status %>
+                </div>
 
-                        <h2 class="film__name">
-                            <%= items[i].name %>
-                        </h2>
-                        <div class="film__country">
-                            <%= items[i].country %>
-                        </div>
-                        <div class="film__genre">
-                            <%= items[i].genre %>
-                        </div> 
-                            <% if (items[i].status == "бесплатно") { %>
-                           <div class="film__status free">
-                            <%= items[i].status %>
-                        </div>
-                        <% } else { %>
-                            <div class="film__status sub">
-                                <%= items[i].status %>
-                            </div>
-
-                        <% } %>
-                        
-                        <img class="film__image" src="/img/<%= items[i].image %>">
-                        <div>
-
-                            
-                            <% if (dark__light) { %>
-                                <!-- <script>
-                                    const film__object = document.querySelector(".film__object")
-                                    film__object.style.background = "#333";
-                                </script> -->
-                            <% } %>
-                           
-                                <% if (auth) { %>
-                                    <form action="/save__Video" method="post">
-
-                                        <input type="hidden" value="<%= items[i].name %>" name="name">
-                                        <input type="hidden" value=" <%= items[i].country %>"name="country">
-                                        <input type="hidden" value="<%= items[i].star %>" name="star">
-                                        <input type="hidden" value="<%= items[i].genre %>" name="genre">
-                                        <input type="hidden" value="<%= items[i].image %>" name="image">
-                                        <!-- <input type="hidden" value="<%= items[i].age %>" name="age"> -->
-                                        <input class="InBascet" value=" В избранное" type="submit">
-
-                                    </form>
-                                    <% if (admin) { %>
-                                       <a href="/delete__moves/<%= items[i].id %>"><button class="delete__moves"><i class="fa fa-trash fa-1x" aria-hidden="true"></i></button></a> 
-                                    <% } %>
-                                <% } %>
-                        </div>
-                    </div>
-                </a>
                 <% } %>
 
+                <img class="film__image" src="/img/<%= items[i].image %>">
+                <div>
 
-        </div>
-        <% for (let i = 1; i <= count; i++) { %>
-        <a href="?page=<%= i %>"> <div class="page"><%= i %></div></a>
+
+                    <% if (auth) { %>
+                    <form action="/save__Video" method="post">
+
+                        <input type="hidden" value="<%= items[i].name %>" name="name">
+                        <input type="hidden" value=" <%= items[i].country %>" name="country">
+                        <input type="hidden" value="<%= items[i].star %>" name="star">
+                        <input type="hidden" value="<%= items[i].genre %>" name="genre">
+                        <input type="hidden" value="<%= items[i].image %>" name="image">
+                        <!-- <input type="hidden" value="<%= items[i].age %>" name="age"> -->
+                        <input class="InBascet" value=" В избранное" type="submit">
+
+                    </form>
+                    <% if (admin) { %>
+                    <a href="/delete__moves/<%= items[i].id %>"><button class="delete__moves"><i class="fa fa-trash fa-1x" aria-hidden="true"></i></button></a>
+                    <% } %>
+                    <% } %>
+                </div>
+            </div>
+        </a>
         <% } %>
-        <div class="hollow"></div>  
+
+
     </div>
+    <% for (let i = 1; i <= count; i++) { %>
+    <a class="page" href="?page=<%= i %>">
+        <div ><%= i %></div>
+    </a>
+    <% } %>
+    <div class="hollow"></div>
+</div>
 
 <%- include('../particles/footer.ejs') %>
-

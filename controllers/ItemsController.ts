@@ -39,7 +39,11 @@ export class ItemsController {
         res.redirect('/');
     }
     async home(req: Request, res: Response) {
+        const genres = await prisma.genres.findMany({
+
+        })
             res.render('home', {
+                'genres':genres,
                 auth: req.session.auth,
                 searchMove: req.session.searchMove,
                 admin: req.session.admin,
@@ -66,8 +70,10 @@ export class ItemsController {
 
     async Add(req: Request, res: Response) {
        const genres =  await prisma.genres.findMany({})
-        res.render('add', {
+       const categories =  await prisma.categories.findMany({})
+        res.render('items/create', {
             'genres': genres,
+            'categories':categories,
             auth: req.session.auth,
             admin: req.session.admin,
             status: req.session.status,
@@ -146,18 +152,21 @@ export class ItemsController {
                 Username:String(req.session.name)
             }
         });
-        res.render('bascet', {
+        const categories = await prisma.categories.findMany({})
+        res.render('cart/index', {
             name:req.session.name,
             auth: req.session.auth,
             admin: req.session.admin,
             status: req.session.status,
             category: req.session.category,
             dark__light: req.session.dark__light,
+            'categories':categories,
             'bascet': bascet
         });
     }
     async users(req: Request, res: Response) {
         const {name, password} = req.body;
+        const categories = await prisma.categories.findMany({})
         const users = await prisma.users.findMany({
             where: {
                 name: name,
@@ -171,6 +180,7 @@ export class ItemsController {
             admin: req.session.admin,
             category: req.session.category,
             dark__light: req.session.dark__light,
+            'categories':categories,
             'users': users
         });
     }
@@ -184,6 +194,8 @@ export class ItemsController {
                 id: Number(id)  
             }
            
+        });
+        const categories = await prisma.categories.findMany({
         });
         
         const rating = await prisma.rating.findMany({
@@ -242,10 +254,11 @@ export class ItemsController {
                 name:String(req.session.name),
             }
         })
-        res.render('description', {
+        res.render('items/show', {
             'items': items,
             'rating' : rating,
             'comments': comment,
+            'categories':categories,
             number:Number(rounded),
             voices : k,
             auth: req.session.auth,

@@ -1,0 +1,82 @@
+@media (max-width:1000px) {
+    .grid {
+        
+        grid-template-areas:
+            "content content"
+            "footer footer";
+       
+
+    }
+
+    .grid__side {
+        display:none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .slider {
+      background-color: rgb(232, 232, 232);
+    }
+    /*VHOD*/
+
+    .vhod{
+        min-width:350px;
+        
+        height: 500px;
+        background-color: #727272;
+        margin:auto;
+        border-radius: 30px;
+        box-shadow: 0 14px 28px rgba(56, 54, 54, 0.25), 0 10px 10px rgba(42, 41, 41, 0.22);
+        padding:10px;
+      }
+      
+      .input__vhod {
+        width: 70%;
+        display:block;
+        height: 50px;
+        margin: 15px;
+        border: none;
+      }
+    
+      .vhod__block-inputs{
+       position:relative;
+       top:25%;
+       left:12%;
+      }
+      
+      input.vhod__btn{
+        width: 75%;
+        height: 60px;
+        position:relative;
+        margin-left:12%;
+        top:40%;
+        padding:none;
+        background-color: rgb(69, 69, 69);
+        border: none;
+        font-family: Century Gothic;
+        font-size: 20px;
+        color: white
+      }
+    
+      .input__addon__name {
+        position: absolute;
+        top:10px;
+        left:-30px;
+        z-index: 7;
+        color: #4c4c4c;
+      }
+    
+      .input__addon__key {
+        top:80px;
+        left:-30px;
+        position: absolute;
+        z-index: 7;
+        color: #4c4c4c;
+      }
+      /*SEARCH*/
+    .search{
+    display:none;
+    }
+}

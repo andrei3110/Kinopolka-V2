@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthController = void 0;
 const client_1 = require("@prisma/client");
 const addLog_1 = require("../logs/addLog");
-// import "./authorizationcontroller"
 const prisma = new client_1.PrismaClient();
 class AuthController {
     registerForm(req, res) {
@@ -64,7 +63,7 @@ class AuthController {
     renderRegistration(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             req.session.auth == undefined;
-            res.render('auth__registration', {
+            res.render('auth/registration', {
                 auth: req.session.auth,
                 password: req.session.password,
                 admin: req.session.admin,
@@ -131,7 +130,7 @@ class AuthController {
     }
     renderLogin(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            res.render('auth__login', {
+            res.render('auth/login', {
                 auth: req.session.auth,
                 password: req.session.password,
                 admin: req.session.admin,

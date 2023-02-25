@@ -5,84 +5,98 @@
     border-radius: 100px;
     position: absolute;
     z-index: 4;
-    top: -80px;
-    right: 130px;
   }
   
   .icon {
     width: 150px;
     height: 150px;
-    position: absolute;
+    position:absolute;
     z-index: 5;
-    top: -80px;
     color: #5f5f5f;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 90px;
-    right: 130px;
+   
   }
-  
-  /* .LogIn {
-    height: 70px;
-    width: 130px;
-    position: fixed;
-    z-index: 7;
-    right: 15px;
-    top: -5px;
-    border-radius: 0px 0px 15px 0px;
-    background-color: rgb(45, 45, 45);
+  .auth__decoration{
+    position: relative;
+    margin-left:30%;
+    top:-80px;
   }
-   */
+  .auth__wrapper{
+    position:relative;
+    margin:auto 0;
+    top:650px;
+  }
   .registration {
-    position: absolute;
     text-decoration: none;
     color: white;
-    top: 400px;
-    left: 110px;
+    position:relative;
+    top:45%;
+    left:30%;
     font-family: Century Gothic;
   }
-  
-  .vhod {
-    width: 400px;
+  /* /////////////////////////////////////////////////////////// */
+
+  .vhod{
+    max-width:400px;
     height: 500px;
     background-color: #727272;
-    z-index: 3;
-    opacity: 100%;
-    position: absolute;
-    left: 35%;
-    bottom: 11%;
+    margin:0 auto;
     border-radius: 30px;
     box-shadow: 0 14px 28px rgba(56, 54, 54, 0.25), 0 10px 10px rgba(42, 41, 41, 0.22);
+    padding:10px;
   }
   
-  .input__login__vhod {
+  /* .input__login__vhod {
     width: 350px;
     height: 50px;
-  }
+  } */
   
   .input__vhod {
-    width: 300px;
+    width: 70%;
+    display:block;
     height: 50px;
-    margin: 10px;
+    margin: 15px;
     border: none;
-    position: relative;
-    top: 100px;
-    left: 50px;
-  
+  }
+
+  .vhod__block-inputs{
+   position:relative;
+   top:25%;
+   left:12%;
   }
   
-  .vhod__btn {
-    width: 300px;
+  input.vhod__btn{
+    width: 75%;
     height: 60px;
-    margin: 10px;
-    position: relative;
-    top: 160px;
-    left: 35px;
+    position:relative;
+    margin-left:12%;
+    top:40%;
+    padding:none;
     background-color: rgb(69, 69, 69);
     border: none;
     font-family: Century Gothic;
     font-size: 20px;
     color: white
   }
+
+  .input__addon__name {
+    position: absolute;
+    top:10px;
+    left:-30px;
+    z-index: 7;
+    color: #4c4c4c;
+  }
+
+  .input__addon__key {
+    top:80px;
+    left:-30px;
+    position: absolute;
+    z-index: 7;
+    color: #4c4c4c;
+  }
+
+  /* ////////////////////////////////////////////////////////////////// */
   
   .LogIN {
     position: absolute;
@@ -93,42 +107,37 @@
   }
   
   .reg {
-    width: 400px;
+    max-width:400px;
     height: 500px;
     background-color: #727272;
-    z-index: 3;
-    opacity: 100%;
-    position: absolute;
-    left: 35%;
-    bottom: 11%;
+    margin:0 auto;
     border-radius: 30px;
     box-shadow: 0 14px 28px rgba(56, 54, 54, 0.25), 0 10px 10px rgba(42, 41, 41, 0.22);
+    padding:10px;
   }
   
-  .input__login__reg {
+  /* .input__login__reg {
     width: 350px;
     height: 50px;
   
-  }
+  } */
   
   .input__reg {
-    width: 300px;
+    width: 70%;
+    display:block;
     height: 50px;
-    margin: 10px;
+    margin: 15px;
     border: none;
-    position: relative;
-    top: 100px;
-    left: 50px;
   
   }
   
-  .reg__btn {
-    width: 300px;
+  Input.reg__btn {
+    width: 75%;
     height: 60px;
-    margin: 10px;
-    position: relative;
-    top: 160px;
-    left: 35px;
+    position:relative;
+    margin-left:12%;
+    top:40%;
+    padding:none;
     background-color: rgb(69, 69, 69);
     border: none;
     font-family: Century Gothic;
@@ -136,37 +145,25 @@
     color: white
   }
   
-  .regist {
+  /* .regist {
     position: absolute;
     font-size: 40px;
     font-family: Century Gothic;
     left: 100px;
     top: 20px;
   
-  }
+  } */
   
   .loginForm {
     text-decoration: none;
-    position: absolute;
     color: white;
-    top: 410px;
-    left: 170px;
+    position:relative;
+    top:50%;
+    right:45%;
     font-family: Century Gothic;
   }
   
-  .input__addon__name {
-    position: absolute;
-    top: 120px;
-    left: 20px;
-    color: #4c4c4c;
-  }
   
-  .input__addon__key {
-    position: relative;
-    top: 180px;
-    left: -310px;
-    color: #4c4c4c;
-  }
   
   .afterError__input__addon__key {
     position: relative;

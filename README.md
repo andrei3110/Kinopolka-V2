@@ -20,3 +20,20 @@
     git add .
     git commit -m 'edit text'
     git push
+
+    //////
+    войти на GitHub
+    создать репозиторий
+    переименовать папку с проектом под название репозитория
+    
+    git init
+
+    git add .
+
+    git commit -m 'text'
+
+    git branch -M main
+
+    git remote add origin https:// путь
+
+    git push -u origin main

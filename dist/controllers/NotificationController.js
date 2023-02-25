@@ -17,8 +17,10 @@ class NotificationController {
     renderNotification(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const chat = yield prisma.chat.findMany({});
-            res.render('notification', {
+            const categories = yield prisma.categories.findMany({});
+            res.render('account/notifications', {
                 'chat': chat,
+                'categories': categories,
                 auth: req.session.auth,
                 admin: req.session.admin,
                 searchMove: req.session.searchMove,

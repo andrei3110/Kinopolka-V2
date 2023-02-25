@@ -51,7 +51,9 @@ class ItemsController {
     }
     home(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            const genres = yield prisma.genres.findMany({});
             res.render('home', {
+                'genres': genres,
                 auth: req.session.auth,
                 searchMove: req.session.searchMove,
                 admin: req.session.admin,
@@ -79,8 +81,10 @@ class ItemsController {
     Add(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const genres = yield prisma.genres.findMany({});
-            res.render('add', {
+            const categories = yield prisma.categories.findMany({});
+            res.render('items/create', {
                 'genres': genres,
+                'categories': categories,
                 auth: req.session.auth,
                 admin: req.session.admin,
                 status: req.session.status,
@@ -157,13 +161,15 @@ class ItemsController {
                     Username: String(req.session.name)
                 }
             });
-            res.render('bascet', {
+            const categories = yield prisma.categories.findMany({});
+            res.render('cart/index', {
                 name: req.session.name,
                 auth: req.session.auth,
                 admin: req.session.admin,
                 status: req.session.status,
                 category: req.session.category,
                 dark__light: req.session.dark__light,
+                'categories': categories,
                 'bascet': bascet
             });
         });
@@ -171,6 +177,7 @@ class ItemsController {
     users(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { name, password } = req.body;
+            const categories = yield prisma.categories.findMany({});
             const users = yield prisma.users.findMany({
                 where: {
                     name: name,
@@ -184,6 +191,7 @@ class ItemsController {
                 admin: req.session.admin,
                 category: req.session.category,
                 dark__light: req.session.dark__light,
+                'categories': categories,
                 'users': users
             });
         });
@@ -197,6 +205,7 @@ class ItemsController {
                     id: Number(id)
                 }
             });
+            const categories = yield prisma.categories.findMany({});
             const rating = yield prisma.rating.findMany({
                 where: {
                     item__id: Number(id),
@@ -243,10 +252,11 @@ class ItemsController {
                     name: String(req.session.name),
                 }
             });
-            res.render('description', {
+            res.render('items/show', {
                 'items': items,
                 'rating': rating,
                 'comments': comment,
+                'categories': categories,
                 number: Number(rounded),
                 voices: k,
                 auth: req.session.auth,

@@ -108,30 +108,37 @@
     transform: rotate(45deg) scale(1.1);    
     color: #FFF;
 }
-
+.logo__munu__user{
+    position:fixed;
+    top:20px;
+    right:10px;
+}
 /* Кнопка выпадающего списка */
 .dropbtn {
-    background-color: #3498DB;
+    border: 2px solid white;
+    background-color: rgb(45, 45, 45);
     color: white;
     padding: 16px;
     font-size: 16px;
-    position:relative;
-    border: none;
-    bottom:20px;  
+    position:fixed;
+  font-family: Century Gothic;
+   top:15px;
+    right:10px;
     cursor: pointer;
     z-index: 9;
-  }~
+  }
   /* Кнопка выпадающего меню при наведении и фокусировке */
   .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
+    transition: all 0.6s;
+    background-color: rgb(58, 58, 58);
   }
   
   /* Контейнер <div> - необходим для размещения выпадающего содержимого */
   .dropdown {
-    position: relative;
+    position: fixed;
     display: inline-block;
-    top:40px;
-    right:10px;
+    top:90px;
+    right:160px;
     float: right;
     z-index: 9;
   }
@@ -140,7 +147,7 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    background-color: rgb(45, 45, 45);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -149,13 +156,13 @@
   /* Ссылки внутри выпадающего списка */
   .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 5px 16px;
     text-decoration: none;
     display: block;
   }
   
   /* Изменение цвета выпадающих ссылок при наведении курсора */
-  .dropdown-content a:hover {background-color: #ddd}
+  .dropdown-content a:hover {background-color: rgb(60, 60, 60);}
   
   /* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
   .show {display:block;}
