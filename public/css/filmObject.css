@@ -100,7 +100,45 @@
     top: 8px;
     left: 10px;
   }
-  
+  .save__InBascet{
+    font-family: Century Gothic;
+    padding:5px;
+    margin-right: 10px;
+    top:0px;
+    position: relative;
+    border:none;
+    float:right;
+  }
+  .save__InBascet:hover{
+    transition: all 0.6s;
+    background-color: #d5d5d5;
+  }
+
+  .save__InBascet--text{
+    position: relative;
+    bottom:6px;
+  }
+.delete__moves{
+  border:none;
+  padding:5px;
+  float:right;
+  margin-right:10px;
+}
+.delete__moves__bascet{
+  padding-top:5px;
+  padding-bottom:2px;
+  padding-left:5px;
+  padding-right:5px;
+  background-color: rgb(255, 156, 80);
+  border:none;
+  float:right;
+  margin-top:50px;
+  margin-right:10px;
+}
+.delete__moves:hover{
+  transition: all 0.6s;
+    background-color: #d5d5d5;    
+}
   .film__status {
     position: relative;
     color: rgb(255, 255, 255);
@@ -110,8 +148,512 @@
     top: 75%;
     z-index: 3;
     border-radius: 0 5px 5px 0;
-  
     font-family: Century Gothic;
     font-size: small;
   }
+
+  /*DESCRIPTION*/
+  .description__film {
+    
+    max-width: 1136px;
+    height:100%;
+    padding: 20px;
+    z-index: 2;
+    background-color: #313131;
+    position: relative;
+    margin:0 auto;
+  }
+ 
+  .about__film {
+    color: rgb(197, 197, 197);
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Century Gothic;
+    position: absolute;
+    top:200px;
+   left: 400px;
+  }
   
+  .description__image {
+    margin-top:100px;
+    opacity: 100%;
+    height: 400px;
+    position: relative;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%);
+    border-radius: 15px 3px 15px 3px;
+  }
+  
+   
+  
+  .description__name {
+    position: absolute;
+    font-size: 360%;
+    left:400px;
+    top:60px;
+    font-weight: 500px;
+    font-family: Century Gothic;
+    color: rgb(197, 197, 197);
+  }
+  .description__genre {
+    position: absolute;
+    left: 400px;
+    top: 250px;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+  .description__year {
+    position: absolute;
+    left: 400px;
+    top: 280px;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+  .description__country {
+    position: absolute;
+    left: 400px;
+    top: 310px;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+  .description__actor {
+    position: absolute;
+    left: 400px;
+    top: 340px;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+  
+  .description__producer {
+    position: absolute;
+    left: 400px;
+    top: 370px;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+  
+    font-family: Century Gothic;
+  }
+  
+  .description__operator {
+    position: absolute;
+    left: 400px;
+    top: 400px;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+  
+  .description__screenwriter {
+    position: absolute;
+    left: 400px;
+    top: 430px;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+  
+  .description__regicer {
+    position: absolute;
+    left: 400px;
+    top:460px;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+  
+  
+  .description__AddToCart{
+    display:none;
+  }
+  .description__description {
+    position: absolute;
+    left: 400px;
+    top: 560px;
+    width: 500px;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+  
+  .textViews {
+    color: rgb(211, 211, 211);
+    margin: 0px;
+    font-weight: bold;
+    position: absolute;
+    float: left;
+    left: 200px;
+  }
+  /* .textVoises {
+    color: rgb(112, 112, 112);
+    max-width: 1000px;
+    margin: 0px;
+    font-weight: bold;
+    position: absolute;
+    float: left;
+    left: 120%;
+  } */
+  
+  
+  
+  /* .video{
+    position:relative;
+    left:20%;
+    top:15%;
+  } */
+  
+  .averange {
+    position: relative;
+    
+    margin-top: 10px;
+    width:300px;
+    height: 80px;
+    border-radius: 10px;
+    background-color: rgb(222, 222, 222);
+    font-size: 15px;
+    color: black;
+    
+    font-family: Century Gothic;
+    border:3px solid #dedede;
+  }
+  .rate__name{
+    position:relative;
+    top:25%;
+    left:10%;
+  }
+  .rate__count{
+    width: 80px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #73a32f;
+    border-radius: 10px;
+    position:relative;
+    top:3%;
+    float:right;
+  }
+  .five{
+    background-color: #73a32f;
+  }
+  .four{
+    background-color: #a3a12f;
+  }
+  .three{
+    background-color: #a35b2f;
+  }
+  .two{
+    background-color: #a33c2f;
+  }
+  
+  .averangeText {
+    font-size: 356%;
+    color: rgb(255, 255, 255);
+    
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  .voices {
+    position: absolute;
+    left: 20px;
+    top: 62%;
+    font-size: 15px;
+    color: black;
+    font-family: Century Gothic;
+  
+  }
+  
+ .header__image{
+    max-width:800px;
+    
+    height:300px;
+  }
+  .fone__image{
+    
+    max-width:1170px;
+    opacity: 30%;
+    position:relative;
+    left:12%;
+  }
+  .gradient {
+    display: inline-block;
+    position: relative;    
+    line-height: 0;
+  }
+  .gradient:after {
+    content: "";
+    display: block;    
+    width: 100%;
+    height: 100%;    
+    position: absolute;
+    top: 0;      
+    left: 12%;   
+    background: transparent;
+    background: radial-gradient(circle at top , rgba(255, 255, 255, 0.3),rgba(42,42,42,0.4),rgba(42,42,42,0.7) ,rgba(42,42,42,1),rgba(42,42,42,1));
+  
+    border:solid rgba(42, 42, 42,1) 4px;
+    
+  }
+
+   
+  /* ////////////////////////////////////////////////////////////////////////  COMMENTS */
+  .comment {
+    position: relative;
+    max-width: 1136px;
+    margin-top: 20px;
+    
+    color: rgb(255, 255, 255);
+    padding: 30px;
+    z-index: 2;
+    height: 100%;
+    background-color: #313131;
+  
+  }
+  
+  .Admin__comment__box {
+    width: 100%;
+    height: 100px;
+    margin: 2px;
+    right: 10px;
+    position: relative;
+    font-family: Century Gothic;
+    background-color: #313131;
+  }
+  
+  .commentText {
+    color: #ffffff;
+  }
+  
+  .commentName {
+    position: relative;
+    font-size: 40px;
+    font-family: Century Gothic;
+    float:left;
+    bottom: 30px;
+  }
+  
+  .comment__box {
+    max-width: 1130px;
+    min-height: 100px;
+    position: relative;
+    margin:5px;
+    
+    background-color: #383838;
+  }
+  .comment__wrapper{
+    margin-top: 40px;
+    position: relative;
+  }
+  .commentUsername {
+    width: max-content;
+    font-family: Century Gothic;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    margin-top: 10px;
+    margin-left:10px;
+    
+    border: #333 2px;
+    border-bottom: 1px solid #bababa;
+  }
+  
+  .commentText {
+    position: relative;
+    margin: 10px;
+    float: left;
+    left: 10px;
+  }
+  
+  /* .deleteComment {
+    position: relative;
+    font-family: Century Gothic;
+    float: right;
+    right: 15px;
+    margin: 20px;
+    padding: 5px;
+    background-color: #383838;
+    bottom: 25px;
+    border: none;
+    color: #8a8a8a;
+
+  } */
+  
+  /* .deleteComment:hover {
+    transition: all 0.4s ease;
+    font-family: Century Gothic;
+    color: rgb(207, 207, 207);
+   
+  } */
+ 
+  /*RATING*/
+.container {
+  
+  max-width: 1136px;
+  margin-top: 20px;
+  position: relative;
+  background: #292929;
+  padding: 20px 20px;
+  border: 2px solid #444;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: grid;
+  z-index: 0;
+  place-items: center;
+  text-align: center;
+}
+
+.container .post {
+  display: none;
+}
+
+.container .text {
+  font-size: 25px;
+  font-family: Century Gothic;
+  color: #999;
+  font-weight: 500;
+}
+
+.container .edit {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 16px;
+  font-family: Century Gothic;
+  color: #999;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.container .edit:hover {
+  text-decoration: underline;
+}
+
+.container form {
+  display: none;
+}
+
+input:checked~form {
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.container .star-widget input {
+  display: none;
+}
+
+.star-widget label .star__icon{
+  font-size: 40px;
+  color: #444;
+  padding: 10px;
+  float: right;
+  transition: all 0.2s ease;
+
+}
+
+input:not(:checked)~label:hover .star__icon,
+input:not(:checked)~label:hover~label .star__icon{
+  color: #fd4;
+}
+
+input:checked~label .star__icon{
+  color: #fd4;
+}
+
+input#rate-5:checked~label .star__icon{
+  color: #fe7;
+  text-shadow: 0 0 20px #952;
+}
+
+input#rate-2:checked~label .star__icon{
+  color: rgb(250, 154, 81);
+}
+
+input#rate-1:checked~label .star__icon{
+  color: rgb(255, 94, 0);
+}
+
+input#rate-3:checked~label .star__icon{
+  color: rgb(233, 247, 77);
+}
+
+input#rate-1:checked~form header:before {
+  content: "i just hate it"
+}
+
+input#rate-2:checked~form header:before .star__icon {
+  content: "i don't like it"
+}
+
+input#rate-3:checked~form header:before .star__icon{
+  content: "i is awasome"
+}
+
+input#rate-4:checked~form header:before .star__icon{
+  content: "i just like it"
+}
+
+input#rate-5:checked~form header:before .star__icon{
+  content: "i just love it"
+} 
+
+form header {
+  width: 100%;
+  font-family: Century Gothic;
+  font-size: 25px;
+  color: rgb(211, 187, 5);
+  font-weight: 500;
+  margin: 10px 0 10px 0;
+
+  text-align: center;
+  transition: all 0.2s ease;
+
+}
+
+
+form .textarea {
+  height: 100px;
+  font-family: Century Gothic;
+  width: 100%;
+  color: #9a9a9a;
+  overflow: hidden;
+}
+
+form .textarea textarea {
+  height: 100%;
+  font-family: Century Gothic;
+  width: 100%;
+  color: #9a9a9a;
+  outline: none;
+  border: 2px 2px 2px 2px solid #333;
+  background: #222;
+  padding: 10px;
+  font-size: 17px;
+}
+
+form .Btn {
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+
+form .Btn button {
+  height: 100%;
+  width: 100%;
+  border: 2px solid rgb(94, 94, 94);
+  outline: none;
+  background: #222;
+  color: #9a9a9a;
+  font-size: 17px;
+  font-family: Century Gothic;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form .Btn button:hover {
+  background: #a1a1a1;
+  color: #333
+}

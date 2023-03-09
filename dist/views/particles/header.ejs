@@ -18,70 +18,82 @@
     <link href="/css/buttons.css" rel="stylesheet">
     <link href="/css/media1.css" rel="stylesheet">
     <link href="/css/media2.css" rel="stylesheet">
+    <link href="/css/icons.css" rel="stylesheet">
 
     <div class="header">
+        <div class="header__content">
+            <div class="search">
+                <form action="/home" method="post">
+                    <input name="name" class="search__films" placeholder="введите название фильма">
+                    <button type="submit" class="search__films__button"><span class="search-icon"><i class="fa fa-search fa-2x" aria-hidden="true"></i></span></button>
+                </form>
+            </div>
+            <input type="checkbox" id="side-checkbox" />
 
-        <form action="/home" method="post" class="search">
-            <input name="name" class="search__films" placeholder="введите название фильма">
-            <button type="submit" class="search__films__button"><span class="search-icon"><i class="fa fa-search fa-2x" aria-hidden="true"></i></span></button>
-        </form>
+<div class="side-panel">
+    <label class="side-button-2" for="side-checkbox">+</label>
+    <div class="side-title">Меню</div>
 
-        <div class="header__name">Kino-polka</div>
-    </div>
+    <p>
 
-    <% if (auth) { %>
-    	<a href="/logout"><button class=" btn LogIn">выход</button></a>
-    <% } else { %>
-    	<a href="/enter"><button class=" btn LogIn">вход</button></a>
-    <% } %>
+        <a href="/home" class="side__panel__btn"><%- include('../icons/home__icon.ejs') %> Главная</a>
 
-    <div class="dropdown">
-        <button class="dropbtn"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></button>
+        <% for (let i = 0; i < categories.length; i++) { %>
+        <a href="/categories/<%=  categories[i].id %>" class="side__panel__btn">
+            <%= categories[i].name %>
+        </a>
+        <% } %>
+    </p>
+</div>
 
-        <div id="myDropdown" class="dropdown-content">
+<div class="side-button-1-wr">
+    <label class="side-button-1" for="side-checkbox">
+        <div class="side-b side-open"><%- include('../icons/menu__icons.ejs') %></div>
+        <div class="side-b side-close"><%- include('../icons/menu__icons.ejs') %></div>
+    </label>
+</div>
+            <div class="header__name">Kino-polka</div>
+
             <% if (auth) { %>
+                <button class="dropbtn"><%- include('../icons/user-circle__icons.ejs') %></button>
+            <div class="dropdown">
+               
 
-				<% if (admin) { %>
-					<a href="/items/create"><button class="btn add">добавить</button></a>
-					<a href="/cart"><button class="btn bascet">корзина</button></a>
-					<a href="/users"><button class="btn users">пользователи</button></a>
-					<a href="/notifications"><button class="btn notification">уведомление</button></a>
-					<!-- <form action="/subscribe" method="post"><input type="submit" class="admin__subscribe" value="Попробовать Kino +"></form> -->
-				<% } else { %>
-					<a href="/cart"><button class="btn bascet__simple"><i class="fa fa-bookmark" aria-hidden="true"></i></button></a>
-					<a href="/notifications"><button class="btn notification__simple">уведомление</button></a>
-					<!-- <form action="/subscribe" method="post"><input type="submit" class="users__subscribe" value="Попробовать Kino +"></form> -->
-				<% } %>
+                <div id="myDropdown" class="dropdown-content">
+                    <% if (auth) { %>
 
-				<a href="/logout"><button class=" btn LogIn">выход</button></a>
+                    <% if (admin) { %>
+                    <a href="/items/create"><button class="btn add">добавить</button></a>
+                    <a href="/cart"><button class="btn bascet">корзина</button></a>
+                    <a href="/users"><button class="btn users">пользователи</button></a>
+                    <!-- <form action="/subscribe" method="post"><input type="submit" class="admin__subscribe" value="Попробовать Kino +"></form> -->
+                    <% } else { %>
+                    <a href="/cart"><button class="btn bascet__simple"><i class="fa fa-bookmark" aria-hidden="true"></i></button></a>
+                    <!-- <form action="/subscribe" method="post"><input type="submit" class="users__subscribe" value="Попробовать Kino +"></form> -->
+                    <% } %>
 
-			<% } else { %>
-				<a href="/enter"><button class=" btn LogIn">вход</button></a>
-				<!-- <form action="/subscribe" method="post"><input type="submit" class="subscribe" value="Попробовать Kino +"></form> -->
+                    <a href="/logout"><button class=" btn LogIn">выход</button></a>
+
+                    <% } else { %>
+                    <a href="/enter"><button class=" btn LogIn">вход</button></a>
+                    <!-- <form action="/subscribe" method="post"><input type="submit" class="subscribe" value="Попробовать Kino +"></form> -->
+                    <% } %>
+                </div>
+            </div>
+
+            <% } else { %>
+            <a href="/enter" class=" login__button"><%- include('../icons/enter__icon.ejs') %></a>
             <% } %>
+            <script>
+                const dropBtn = document.querySelector('.dropbtn')
+
+                dropBtn.addEventListener('click', function myFunction() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                })
+            </script>
         </div>
     </div>
 
-    <script>
-        const dropBtn = document.querySelector('.dropbtn')
-
-        dropBtn.addEventListener('click', function myFunction() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        })
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropbtn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 
 <body>

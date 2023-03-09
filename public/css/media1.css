@@ -1,82 +1,613 @@
 @media (max-width:1000px) {
-    .grid {
-        
-        grid-template-areas:
-            "content content"
-            "footer footer";
-       
+  .grid {
 
-    }
+    grid-template-areas:
+      "content content"
+      "footer footer";
 
-    .grid__side {
-        display:none;
-    }
 
-    .menu {
-        display: none;
-    }
+  }
 
-    .slider {
-      background-color: rgb(232, 232, 232);
-    }
-    /*VHOD*/
+  .grid__side {
+    display: none;
+  }
 
-    .vhod{
-        min-width:350px;
-        
-        height: 500px;
-        background-color: #727272;
-        margin:auto;
-        border-radius: 30px;
-        box-shadow: 0 14px 28px rgba(56, 54, 54, 0.25), 0 10px 10px rgba(42, 41, 41, 0.22);
-        padding:10px;
-      }
-      
-      .input__vhod {
-        width: 70%;
-        display:block;
-        height: 50px;
-        margin: 15px;
-        border: none;
-      }
-    
-      .vhod__block-inputs{
-       position:relative;
-       top:25%;
-       left:12%;
-      }
-      
-      input.vhod__btn{
-        width: 75%;
-        height: 60px;
-        position:relative;
-        margin-left:12%;
-        top:40%;
-        padding:none;
-        background-color: rgb(69, 69, 69);
-        border: none;
-        font-family: Century Gothic;
-        font-size: 20px;
-        color: white
-      }
-    
-      .input__addon__name {
-        position: absolute;
-        top:10px;
-        left:-30px;
-        z-index: 7;
-        color: #4c4c4c;
-      }
-    
-      .input__addon__key {
-        top:80px;
-        left:-30px;
-        position: absolute;
-        z-index: 7;
-        color: #4c4c4c;
-      }
-      /*SEARCH*/
-    .search{
-    display:none;
-    }
+  .menu {
+    display: none;
+  }
+
+  .slider {
+    background-color: rgb(232, 232, 232);
+  }
+
+  /*VHOD*/
+
+  .vhod {
+    min-width: 350px;
+
+    height: 500px;
+    background-color: #727272;
+    margin: auto;
+    border-radius: 30px;
+    box-shadow: 0 14px 28px rgba(56, 54, 54, 0.25), 0 10px 10px rgba(42, 41, 41, 0.22);
+    padding: 10px;
+  }
+
+  .input__vhod {
+    width: 70%;
+    display: block;
+    height: 50px;
+    margin: 15px;
+    border: none;
+  }
+
+  .vhod__block-inputs {
+    position: relative;
+    top: 25%;
+    left: 12%;
+  }
+
+  input.vhod__btn {
+    width: 75%;
+    height: 60px;
+    position: relative;
+    margin-left: 12%;
+    top: 40%;
+    padding: none;
+    background-color: rgb(69, 69, 69);
+    border: none;
+    font-family: Century Gothic;
+    font-size: 20px;
+    color: white
+  }
+
+  .input__addon__name {
+    position: absolute;
+    top: 10px;
+    left: -30px;
+    z-index: 7;
+    color: #4c4c4c;
+  }
+
+  .input__addon__key {
+    top: 80px;
+    left: -30px;
+    position: absolute;
+    z-index: 7;
+    color: #4c4c4c;
+  }
+  .dropbtn {
+    bottom: 50px;
+}
+
+  /*SEARCH*/
+  .search__films {
+    width: 0;
+    height: 0;
+  }
+
+  .login__button {
+    padding: 10px;
+    position: relative;
+    bottom: 40px;
+    right: 5px;
+    background-color: rgb(45, 45, 45);
+    border: none;
+    z-index: 10;
+    float: right;
+
+  }
+
+  /*GENRE OBJECT*/
+  .genres__image {
+    position: relative;
+    top: 10%;
+    padding-left: 20px;
+    height: 80%
+  }
+
+  .genres__name {
+    position: absolute;
+    float: right;
+    padding-left: 150px;
+    font-size: 20px;
+    top: 0px;
+    font-family: Century Gothic;
+    color: black;
+  }
+
+  .genre__object {
+    width: 75%;
+    height: 55px;
+
+  }
+
+  .genre__object:hover {
+    height: 60px;
+  }
+
+  .header__image {
+    display: none;
+  }
+
+  .description__film {
+
+    max-width: 1136px;
+    height: 100%;
+
+
+    text-align: center;
+    background-color: #e0e0e0;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .description__film__wrapper {
+    max-width: 700px;
+    height: 100%;
+    padding: 20px;
+    position: relative;
+    margin: 0 auto;
+    background-color: #d4d4d4;
+  }
+
+  .description__AddToCart {
+    display: inline-block;
+    color: #4c4c4c;
+  }
+
+  .description__image {
+    opacity: 100%;
+    height: 400px;
+    position: relative;
+
+
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%);
+    border-radius: 0 0 0 0;
+  }
+
+
+  .about__film {
+    color: rgb(197, 197, 197);
+    font-weight: bold;
+    font-size: 25px;
+    font-family: Century Gothic;
+    position: absolute;
+    top: 200px;
+    display: none;
+    left: 400px;
+  }
+
+  .description__name {
+
+    position: relative;
+    font-size: 250%;
+    left: 0;
+    top: 5px;
+    font-weight: 500px;
+    font-family: Century Gothic;
+    color: rgb(50, 50, 50);
+  }
+
+  .title__text {
+    display: none;
+  }
+
+  .description__genre {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .description__year {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .description__country {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .description__actor {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .description__producer {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+
+    font-family: Century Gothic;
+  }
+
+  .description__operator {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .description__screenwriter {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .description__regicer {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+
+
+  .description__description {
+    display: none;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 500px;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .averange {
+    position: relative;
+    display: none;
+    margin-top: 10px;
+    width: 300px;
+    height: 80px;
+    border-radius: 10px;
+    background-color: rgb(222, 222, 222);
+    font-size: 15px;
+    color: black;
+
+    font-family: Century Gothic;
+    border: 3px solid #dedede;
+  }
+
+  .textViews {
+    color: rgb(97, 97, 97);
+    margin: 5px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    left: 0;
+  }
+
+  .rate__name {
+    display: none;
+    position: relative;
+    top: 25%;
+    left: 10%;
+  }
+
+  .rate__count {
+    display: none;
+    width: 80px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #73a32f;
+    border-radius: 10px;
+    position: relative;
+    top: 3%;
+    float: right;
+  }
+
+  .watch__by__subscribe {
+    display: none;
+  }
+
+  .watch__for__free {
+    display: none;
+  }
+
+  .description__information {
+    text-align: center;
+    width: 160px;
+    position: relative;
+    bottom: 15px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  .role--hidden__title {
+    position: relative;
+    top: 6px;
+    color: rgb(88, 88, 88);
+    float: left;
+    font-family: Century Gothic;
+  }
+
+  .role {
+    width: 350px;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    bottom: 40px;
+    margin: 0 auto;
+  }
+
+  /*CONTAINER*/
+  .container {
+
+    max-width: 1136px;
+    margin-top: 20px;
+    position: relative;
+    background: #e0e0e0;
+    padding: 20px 20px;
+    border: 2px solid #676767;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: grid;
+    z-index: 0;
+    place-items: center;
+    text-align: center;
+  }
+
+  .container .post {
+    display: none;
+  }
+
+  .container .text {
+    font-size: 25px;
+    font-family: Century Gothic;
+    color: #999;
+    font-weight: 500;
+  }
+
+  .container .edit {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 16px;
+    font-family: Century Gothic;
+    color: #999;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .container .edit:hover {
+    text-decoration: underline;
+  }
+
+  .container form {
+    display: none;
+  }
+
+  input:checked~form {
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  .container .star-widget input {
+    display: none;
+  }
+
+  .star-widget label .star__icon {
+    font-size: 40px;
+    color: #444;
+    padding: 10px;
+    float: right;
+    transition: all 0.2s ease;
+
+  }
+
+  input:not(:checked)~label:hover .star__icon,
+  input:not(:checked)~label:hover~label .star__icon {
+    color: #fd4;
+  }
+
+  input:checked~label .star__icon {
+    color: #fd4;
+  }
+
+  input#rate-5:checked~label .star__icon {
+    color: rgb(228, 214, 107);
+    text-shadow: 0 0 20px rgb(138, 70, 17);
+  }
+
+  input#rate-2:checked~label .star__icon {
+    color: rgb(216, 133, 69);
+  }
+
+  input#rate-1:checked~label .star__icon {
+    color: rgb(212, 78, 1);
+  }
+
+  input#rate-3:checked~label .star__icon {
+    color: rgb(233, 247, 77);
+  }
+
+  input#rate-1:checked~form header:before {
+    content: "i just hate it"
+  }
+
+  input#rate-2:checked~form header:before .star__icon {
+    content: "i don't like it"
+  }
+
+  input#rate-3:checked~form header:before .star__icon {
+    content: "i is awasome"
+  }
+
+  input#rate-4:checked~form header:before .star__icon {
+    content: "i just like it"
+  }
+
+  input#rate-5:checked~form header:before .star__icon {
+    content: "i just love it"
+  }
+
+  form header {
+    width: 100%;
+    font-family: Century Gothic;
+    font-size: 25px;
+    color: rgb(211, 187, 5);
+    font-weight: 500;
+    margin: 10px 0 10px 0;
+
+    text-align: center;
+    transition: all 0.2s ease;
+
+  }
+
+
+  form .textarea {
+    height: 100px;
+    font-family: Century Gothic;
+    width: 100%;
+    color: #9a9a9a;
+    overflow: hidden;
+    border: 1px solid #7c7c7c;
+  }
+
+  form .textarea textarea {
+    height: 100%;
+    font-family: Century Gothic;
+    width: 100%;
+    color: #9a9a9a;
+    outline: none;
+
+    background: #e0e0e0;
+    padding: 10px;
+    font-size: 17px;
+  }
+
+  form .Btn {
+    height: 45px;
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  form .Btn button {
+    height: 100%;
+    width: 100%;
+    border: 2px solid rgb(94, 94, 94);
+    outline: none;
+    background: #e0e0e0;
+    color: #7b7b7b;
+    font-size: 17px;
+    font-family: Century Gothic;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  form .Btn button:hover {
+    background: rgb(106, 106, 106);
+    color: #333
+  }
+
+  /* ////////////////////////////////////////////////////////////////////////  COMMENTS */
+  .comment {
+    background: #e0e0e0;
+  }
+
+  .Admin__comment__box {
+    width: 100%;
+    height: 100px;
+    margin: 2px;
+    right: 10px;
+    position: relative;
+    font-family: Century Gothic;
+    background: #d8d8d8;
+  }
+
+  .commentText {
+    color:#454545;
+  }
+
+  .commentName {
+    color:#333;
+  }
+
+  .comment__box {
+    background: #d8d8d8;
+  }
+  .commentUsername {
+    color: #454545;
+    border-bottom: 1px solid #474747;
+  }
+
+  /* .deleteComment {
+      position: relative;
+      font-family: Century Gothic;
+      float: right;
+      right: 15px;
+      margin: 20px;
+      padding: 5px;
+      background-color: #383838;
+      bottom: 25px;
+      border: none;
+      color: #8a8a8a;
+  
+    } */
+
+  /* .deleteComment:hover {
+      transition: all 0.4s ease;
+      font-family: Century Gothic;
+      color: rgb(207, 207, 207);
+     
+    } */
+}
+
+@media (max-width:1250px) {
+  div.genres__tags__wrapper {
+    width: auto;
+  }
+
+  div.tags__wrapper {
+    background-color: #f2f2f2;
+    width: auto;
+  }
+
+}
+
+@media (max-width:1536px) {
+  .header__image {
+    max-width: 800px;
+    margin: 0 25%;
+  }
+
+  .fone__image {
+    max-width: 650px;
+    opacity: 30%;
+    position: relative;
+    left: 12%;
+  }
+
+
 }

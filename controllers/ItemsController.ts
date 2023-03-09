@@ -35,15 +35,23 @@ export class ItemsController {
             }
 
         });
-
+    
         res.redirect('/');
     }
     async home(req: Request, res: Response) {
-        const genres = await prisma.genres.findMany({
-
+        req.session.active = "genre";
+        const items = await prisma.items.findMany({
+            take:5,
+            where:{
+                status:'подписка'
+            }
         })
+        const genres = await prisma.genres.findMany({})
+        const categories = await prisma.categories.findMany({})
             res.render('home', {
+                'categories':categories,
                 'genres':genres,
+                'items':items,
                 auth: req.session.auth,
                 searchMove: req.session.searchMove,
                 admin: req.session.admin,
@@ -71,8 +79,10 @@ export class ItemsController {
     async Add(req: Request, res: Response) {
        const genres =  await prisma.genres.findMany({})
        const categories =  await prisma.categories.findMany({})
+       const items =  await prisma.items.findMany({})
         res.render('items/create', {
             'genres': genres,
+            'items':items,
             'categories':categories,
             auth: req.session.auth,
             admin: req.session.admin,
@@ -82,31 +92,9 @@ export class ItemsController {
         });
     }
     async AddItems(req: Request, res: Response) {
-        const { name, image, description, producer, actor, screenwriter, operator, regicer,year,type, age, country,status, genre, video, treller } = req.body;
-        const items = await prisma.items.findMany({
-            where: {
-
-                name: name,
-                image: image,
-                description: description,
-                producer: producer,
-                actor: actor,
-                screenwriter: screenwriter,
-                operator: operator,
-                regicer: regicer,
-                type: Number(type),
-                country: country,
-                age: age,
-                genre: genre,
-                year: Number(year),
-                status : status,
-                video: video,
-                treller:treller
-
-            }
-        });
+        const { name, image, description, producer, actor, screenwriter, operator, regicer,year, age, country,status, video, treller } = req.body;
+       
         let genres = await prisma.genres.findMany({})
-        
         
         let all = "";
         let one = "";
@@ -125,7 +113,7 @@ export class ItemsController {
                 screenwriter: screenwriter,
                 operator: operator,
                 regicer: regicer,
-                type: Number(type),
+                type: Number(req.body.check__radio),
                 country: country,
                 age: age,
                 genre: all,
@@ -137,7 +125,7 @@ export class ItemsController {
         });
         req.session.status = status;
         console.log(req.session.status)
-        res.redirect('/add')
+        res.redirect('items/create')
     }
 
     async bascet(req: Request, res: Response) {
@@ -317,16 +305,6 @@ export class ItemsController {
                 Username:String(req.session.name)
             }
         });
-        const bascet = await prisma.bascet.findMany({
-            where: {
-                name: name,
-                image: image,
-                country: country,
-                age: age,
-                genre: genre,
-                Username:String(req.session.name)
-            }
-        });
         res.redirect('/bascet');
     }
 
@@ -363,9 +341,12 @@ export class ItemsController {
         }else{
             req.session.searchMove = false
         }
-        
+        const categories = await prisma.categories.findMany({})
+        const genres = await prisma.genres.findMany({})
 
-        res.render('searchHome',{
+        res.render('search',{
+            'categories':categories,
+            'genres':genres,
             'items': items,
             searchMove:req.session.searchMove,
             auth: req.session.auth,
@@ -386,18 +367,7 @@ export class ItemsController {
         const genres = await prisma.genres.findMany({
 
         })
-        res.render('types/index',{
-            'items': items,
-            'genres':genres,
-            searchMove:req.session.searchMove,
-            auth: req.session.auth,
-            admin: req.session.admin,
-            status: req.session.status,
-            active:req.session.active,
-            category: req.session.category,
-            dark__light: req.session.dark__light,
-            mark: req.session.mark
-        });
+        res.redirect("/moves")
     }
 
 }

@@ -1,9 +1,5 @@
 <%- include('../particles/header.ejs') %>
-
-
-
     <div class="content">
-        <%- include('../particles/menu.ejs') %>
         <div class="film">
             <% for (let i=0; i < bascet.length; i++) { %>
 
@@ -21,8 +17,10 @@
                     </div>
                     <img class="film__image" src="/img/<%= bascet[i].image %>">
                     <div>
-
-                        <!-- <a href="/delete__Video/<%= bascet[i].id %>"><button class="DeleteVideo" type="submit">Убрать</button></a> -->
+                       
+                        <form action="/delete__Video/<%= bascet[i].id %>" method="post">
+                            <button class="delete__moves__bascet" type="submit"><%- include('../icons/remove__icon__bascet.ejs') %></button>
+                        </form>
 
                     </div>
                 </div>

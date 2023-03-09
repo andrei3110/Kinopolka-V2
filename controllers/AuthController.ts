@@ -6,6 +6,7 @@ const prisma: PrismaClient = new PrismaClient();
 
 export class AuthController {
     async registerForm(req: Request, res: Response) {
+        const categories =  await prisma.categories.findMany({})
         const { name, password } = req.body;
         req.session.auth = undefined;
         const users = await prisma.users.findMany({
@@ -49,8 +50,10 @@ export class AuthController {
     }
 
     async renderRegistration(req: Request, res: Response) {
+        const categories =  await prisma.categories.findMany({})
         req.session.auth == undefined;
         res.render('auth/registration', {
+            'categories':categories,
             auth: req.session.auth,
             password: req.session.password,
             admin: req.session.admin,
@@ -113,7 +116,9 @@ export class AuthController {
     }
 
     async renderLogin(req: Request, res: Response) {
+        const categories =  await prisma.categories.findMany({})
         res.render('auth/login', {
+            'categories':categories,   
             auth: req.session.auth,
             password: req.session.password,
             admin: req.session.admin,

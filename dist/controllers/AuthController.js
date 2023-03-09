@@ -16,6 +16,7 @@ const prisma = new client_1.PrismaClient();
 class AuthController {
     registerForm(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            const categories = yield prisma.categories.findMany({});
             const { name, password } = req.body;
             req.session.auth = undefined;
             const users = yield prisma.users.findMany({
@@ -62,8 +63,10 @@ class AuthController {
     }
     renderRegistration(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            const categories = yield prisma.categories.findMany({});
             req.session.auth == undefined;
             res.render('auth/registration', {
+                'categories': categories,
                 auth: req.session.auth,
                 password: req.session.password,
                 admin: req.session.admin,
@@ -130,7 +133,9 @@ class AuthController {
     }
     renderLogin(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            const categories = yield prisma.categories.findMany({});
             res.render('auth/login', {
+                'categories': categories,
                 auth: req.session.auth,
                 password: req.session.password,
                 admin: req.session.admin,

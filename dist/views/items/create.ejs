@@ -1,45 +1,50 @@
 <%- include('../particles/header.ejs') %>
 
 
-        <div class="content">
-           
+<div class="content">
+    <form action="/AddItems" method="post">
 
-                <%- include('../particles/menu.ejs') %>
-                
-                <div class="addName">Добавление фильма</div>
-                    <form action="/AddItems" method="post">
-                        
-                        <!-- <input class="Additems" name="genre" placeholder="жанр"> -->
-                        <div class="addgenre">
-                            
-                        <% for (let i=0; i < genres.length; i++) { %>
-                        
-                            <div class="AddGenres"><input type="checkbox" class="checkbox" name="check" value="<%= genres[i].name %>">
-                                <label class="nameGenre"><%= genres[i].name %></label></div>
-                        <% } %>
-                    </div>
-                    <div class="additem">
-                        <input class="Additems" name="description" placeholder="описание">
-                        <input class="Additems" name="type" placeholder="тип">
-                        <input class="Additems" name="country" placeholder="страна">
-                        <input class="Additems" name="name" placeholder="имя">
-                        <input class="Additems" name="image" type="file" placeholder="файл">
-                        <input class="Additems" name="year" placeholder="год">
-                        <input class="Additems" name="status" placeholder="статус">
-                        <input class="Additems" name="video" placeholder="видео">
-                        <input class="Additems" name="treller" placeholder="треллер">
-                    </div>
-                        <div class="addabout">
-                        <input class="Add__About__films" name="actor" placeholder="актеры">
-                        <input class="Add__About__films" name="producer" placeholder="продюсер">
-                        <input class="Add__About__films" I name="regicer" placeholder="режиссер">
-                        <input class="Add__About__films" name="screenwriter" placeholder="сценарист">
-                        <input class="Add__About__films" name="operator" placeholder="оператор">
-                    </div>
-                        
-                        <a><input class="btn AddBtn" type="submit" value="опубликовать"></a>
-                    </form>
-                    
-                   
+        <div class="create__genre">
+            <% for (let i=0; i < genres.length; i++) { %>
+            <div class="create__genre--items"><input type="checkbox" class="checkbox" name="check" value="<%= genres[i].name %>">
+                <label class="create__genre--items__name"><%= genres[i].name %></label>
+            </div>
+            <% } %>
         </div>
-        <%- include('../particles/footer.ejs') %>
+
+        <div class="create__item__block1">
+            <input class="create__item--items" name="description" placeholder="описание">
+            
+                <% for (let i=0; i < categories.length; i++) { %>
+                    <div class="create__radio__items">
+                        <input type="radio" class="radio" name="check__radio"  value="<%= categories[i].id %>">
+                        <label class="radio__items" ><%= categories[i].name %></label>
+                    </div>
+                     
+         
+                    <% } %>
+            
+            
+            <input class="create__item--items" name="country" placeholder="страна">
+            <input class="create__item--items" name="name" placeholder="имя">
+            <input class="create__item--items" name="image" type="file" placeholder="файл">
+        </div>
+        <div class="create__item__block2">
+            <input class="create__item--items" name="year" placeholder="год">
+            <input class="create__item--items" name="status" placeholder="статус">
+            <input class="create__item--items" name="video" placeholder="видео">
+            <input class="create__item--items" name="treller" placeholder="треллер">
+        </div>
+        <div class="cerate__description">
+            <input class="cerate__description--items" name="actor" placeholder="актеры">
+            <input class="cerate__description--items" name="producer" placeholder="продюсер">
+            <input class="cerate__description--items" I name="regicer" placeholder="режиссер">
+            <input class="cerate__description--items" name="screenwriter" placeholder="сценарист">
+            <input class="cerate__description--items" name="operator" placeholder="оператор">
+        </div>
+        <input class="btn AddBtn" type="submit" value="опубликовать">
+    </form>
+
+</div>
+
+<%- include('../particles/footer.ejs') %>

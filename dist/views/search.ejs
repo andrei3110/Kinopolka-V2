@@ -1,54 +1,20 @@
 <%- include('particles/header.ejs') %>
 
-<div class="wrapper1">
-    <div class="content4">
-    <!-- <%- include('particles/navigation.ejs') %> -->
-    
-<%- include('particles/menu.ejs') %>
-        <%- include('particles/adaptive.ejs') %>
-        <form action="/home" method="post">
-            <input name="name" class="search__films" placeholder="введите название фильма">
-        <div class="genres__btn">
+<div class="content">
 
+    <div class="genres__tags">
+        <div class="genres__tags__wrapper">
+            <% for (let i=0; i < genres.length; i++) { %>
+                <form class="tags__form" action="/search/byGenre" method="post">
+                    <input type="submit" class="tags__item" name="name" value="<%= genres[i].name %>">
+                </form>
+            <% } %>
         </div>
-        
-        <input type="submit" class="search__films__button">
-    
-</form>
+    </div>
 
-    FROM DB!!!
-<!-- <form action="/bovik" method="post"><input type="submit" class="search__of__genre bovik" name="name" value="боевик"></form>
-            <form action="/adventure" method="post"><input type="submit" class="search__of__genre adventure" name="name" value="приключения"></form>
-            <form action="/triller" method="post"><input type="submit" class="search__of__genre triller" name="name" value="триллер"></form>
-            <form action="/horror" method="post"><input type="submit" class="search__of__genre horror" name="name" value="ужасы"></form>
-            <form action="/drama" method="post"><input type="submit" class="search__of__genre dramma" name="name" value="драмма"></form>
-            <form action="/comedy" method="post"><input type="submit" class="search__of__genre comedy" name="name" value="комедия"></form>
-            <form action="/melodrama" method="post"><input type="submit" class="search__of__genre melodrama" name="name" value="мелодрамма"></form>
-            <form action="/tragedy" method="post"><input type="submit" class="search__of__genre tragedy" name="name" value="трагедия"></form>
-            <form action="/fantastic" method="post"><input type="submit" class="search__of__genre fantastic" name="name" value="фантастика"></form>
-            <form action="/anime" method="post"><input type="submit" class="search__of__genre anime" name="name" value="аниме"></form>
-            <form action="/mistyc" method="post"><input type="submit" class="search__of__genre mistyc" name="name" value="мистика"></form>
-            <form action="/detective" method="post"><input type="submit" class="search__of__genre detective" name="name" value="детектив"></form>
-            <form action="/child" method="post"><input type="submit" class="search__of__genre child" name="name" value="детский"></form>
-            <form action="/family" method="post"><input type="submit" class="search__of__genre family" name="name" value="семейный"></form>
-            <form action="/istoric" method="post"><input type="submit" class="search__of__genre istoric" name="name" value="исторический"></form>
-<div> -->
-
-</div>
-    
-        
-</div>
-
-
-
-
-           
-        </div>
-       
-        <div class="content1">
     <% if (searchMove) { %>
         <span class="scroll-icon"><i class="fa fa-angle-up fa-4x" aria-hidden="true"></i></span>
-        <div class="scroll">Scroll Up</div>
+       
         
         <% for (let i=0; i < items.length; i++) { %>
     
@@ -88,8 +54,8 @@
             </a>
         <% } %>
     <% } else { %>
-        <span class="search-icon"><i class="fa fa-search fa-4x" aria-hidden="true"></i></span>
-        <div class="scroll">not found</div>
+        <!-- <span class="search-icon"><i class="fa fa-search fa-4x" aria-hidden="true"></i></span> -->
+        <div class="not__found">по вашему запросу ничего не найдено</div>
     <% } %>
         
     </div>

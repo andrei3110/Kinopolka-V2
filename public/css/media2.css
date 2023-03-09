@@ -1,217 +1,502 @@
 @media (max-width: 700px) {
-    .slider {
-        border-radius: 0;
-       
-        margin: auto;
-        display:inline-block;
-        background-color: rgb(232, 232, 232);
-        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
-        position: relative;
-       
-        width: 100%;
-    }
-    .header{
-        width:100%;
-        height: 80px;
-        position: fixed;
-        top:0px;
-        margin-bottom:10px;
-        z-index: 6;
-        border-radius: 0 0 0 0 ;
-        background-color: rgb(45, 45, 45);
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-      }
-      .subscribe__container{
-        display:none;
-        
-      }
-      .subscribe__paid{
-        display:none;
-        
-      }
-      .subscribe{
-        border-radius: 0;
-        margin-top: 20PX;
-        width:100%;
-        min-height: 500px;
-        background-color: #d5d5d5;
-        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
-        
-      }
-      .subscribe__wrapper{
-        border-radius: 0 0 0 0 ;
-      }
-      .grid__content{
-        padding:0px;
-      }
-      .dropbtn {
-        padding: 10px;
-       top:18px;
-        right:15px;
-      }
-      .header__name {
-        top:30%;
-        font-size: 25px;
-      }
-            /*VHOD*/
-            .content__auth {
-              padding: none;
-              max-width: 1536px;
-              margin: 0 auto;
-              min-height: 100vh;
-              background-color: #ffffff;
-            }
-            
-            .icon{
-              color:rgb(184, 184, 184);
-            }
-            .vhod{
-              width:none;
-              max-height:none;
-              background-color: #c8c8c8;
-              
-              border-radius: 0;
-              box-shadow: 28px 42px 90px 28px rgba(56, 54, 54, 0.25), 0 10px 30px 0 rgba(42, 41, 50, 0.22);
-              padding:0px;
-            }
-            
-            .input__vhod {
-              width: 70%;
-              display:block;
-              height: 50px;
-              margin: 15px;
-              border: none;
-            }
-          
-            .vhod__block-inputs{
-             position:relative;
-             /* display:none; */
-             top:25%;
-             left:12%;
-            }
-            
-            input.vhod__btn{
-              width: 75%;
-              height: 60px;
-              position:relative;
-              margin-left:12%;
-              top:40%;
-              /* display:none; */
-              padding:none;
-              background-color: rgb(69, 69, 69);
-              border: none;
-              font-family: Century Gothic;
-              font-size: 20px;
-              color: white
-            }
-          
-            .input__addon__name {
-              position: absolute;
-              top:10px;
-              left:-30px;
-              z-index: 7;
-              /* display:none; */
-              color: #4c4c4c;
-            }
-          
-            .input__addon__key {
-              top:80px;
-              left:-30px;
-              /* display:none; */
-              position: absolute;
-              z-index: 7;
-              color: #4c4c4c;
-            }
-            .registration {
-              text-decoration: none;
-              color: white;
-              position:relative;
-              top:45%;
-              /* display:none; */
-              left:30%;
-              font-family: Century Gothic;
-            }
-}
-@media (max-width: 490px) {
-  
-          /*VHOD*/
-          .content__auth {
-            overflow-x: hidden;
-            padding: none;
-            width: 100%;
-            margin: 0 auto;
-            min-height: 100vh;
-            background-color: #ffffff;
-          }
-          .icon{
-            color:rgb(184, 184, 184);
-          }
-    
-          .vhod{
-            width:none;
-            max-height:none;
-            background-color: #c8c8c8;
-            
-            border-radius: 0;
-            box-shadow: 28px 42px 90px 28px rgba(56, 54, 54, 0.25), 0 10px 30px 0 rgba(42, 41, 50, 0.22);
-            padding:0px;
-          }
-          
-          .input__vhod {
-            width: 70%;
-            display:block;
-            height: 50px;
-            margin: 15px;
-            border: none;
-          }
-        
-          .vhod__block-inputs{
-           position:relative;
-           /* display:none; */
-           top:25%;
-           left:12%;
-          }
-          
-          input.vhod__btn{
-            width: 75%;
-            height: 60px;
-            position:relative;
-            margin-left:12%;
-            top:40%;
-            /* display:none; */
-            padding:none;
-            background-color: rgb(69, 69, 69);
-            border: none;
-            font-family: Century Gothic;
-            font-size: 20px;
-            color: white
-          }
-        
-          .input__addon__name {
-            position: absolute;
-            top:10px;
-            left:-30px;
-            z-index: 7;
-            /* display:none; */
-            color: #4c4c4c;
-          }
-        
-          .input__addon__key {
-            top:80px;
-            left:-30px;
-            /* display:none; */
-            position: absolute;
-            z-index: 7;
-            color: #4c4c4c;
-          }
-          .registration {
-            text-decoration: none;
-            color: white;
-            position:relative;
-            top:45%;
-            /* display:none; */
-            left:30%;
-            font-family: Century Gothic;
-          }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .slider {
+    border-radius: 0;
+
+    margin: auto;
+    display: inline-block;
+    background-color: rgb(232, 232, 232);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    position: relative;
+
+    width: 100%;
+  }
+
+  .header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0px;
+    margin-bottom: 10px;
+    z-index: 6;
+    border-radius: 0 0 0 0;
+    background-color: rgb(45, 45, 45);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+
+  .subscribe__container {
+    display: none;
+
+  }
+
+  .subscribe__paid {
+    display: none;
+
+  }
+
+  .subscribe {
+    border-radius: 0;
+    margin-top: 20PX;
+    width: 100%;
+    min-height: 500px;
+    background-color: #d5d5d5;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+
+  }
+
+  .subscribe__wrapper {
+    border-radius: 0 0 0 0;
+  }
+
+  .grid__content {
+    padding: 0px;
+  }
+
+  .dropbtn {
+    border:none;
+    background-color: rgb(45, 45, 45);
+    border-radius: 100px;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    position: relative;
+    float:right;
+    bottom: 55px;
+    right:10px;
+    font-family: Century Gothic; 
+    cursor: pointer;
+    z-index: 9;
 }
 
+  .header__name {
+    top: 30%;
+    font-size: 25px;
+  }
+
+  /*VHOD*/
+  .content__auth {
+    padding: none;
+    max-width: 1536px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #ffffff;
+  }
+
+  .icon {
+    color: rgb(184, 184, 184);
+  }
+
+  .vhod {
+    width: none;
+    max-height: none;
+    background-color: #c8c8c8;
+
+    border-radius: 0;
+    box-shadow: 28px 42px 90px 28px rgba(56, 54, 54, 0.25), 0 10px 30px 0 rgba(42, 41, 50, 0.22);
+    padding: 0px;
+  }
+
+  .input__vhod {
+    width: 70%;
+    display: block;
+    height: 50px;
+    margin: 15px;
+    border: none;
+  }
+
+  .vhod__block-inputs {
+    position: relative;
+    /* display:none; */
+    top: 25%;
+    left: 12%;
+  }
+
+  input.vhod__btn {
+    width: 75%;
+    height: 60px;
+    position: relative;
+    margin-left: 12%;
+    top: 40%;
+    /* display:none; */
+    padding: none;
+    background-color: rgb(69, 69, 69);
+    border: none;
+    font-family: Century Gothic;
+    font-size: 20px;
+    color: white
+  }
+
+  .input__addon__name {
+    position: absolute;
+    top: 10px;
+    left: -30px;
+    z-index: 7;
+    /* display:none; */
+    color: #4c4c4c;
+  }
+
+  .input__addon__key {
+    top: 80px;
+    left: -30px;
+    /* display:none; */
+    position: absolute;
+    z-index: 7;
+    color: #4c4c4c;
+  }
+
+  .registration {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    top: 45%;
+    /* display:none; */
+    left: 30%;
+    font-family: Century Gothic;
+  }
+
+  .genres__image {
+    position: relative;
+    top: 10%;
+    padding-left: 20px;
+    height: 80%
+  }
+
+  .genres__name {
+    position: absolute;
+    left:13%;
+    padding-left: 100px;
+    color:#696969;
+    font-size: 19px;
+    top: 5px;
+    font-family: Century Gothic;
+    
+  }
+
+ .genre__object {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 55px;
+  left: 0;
+}
+
+  .genre__object:hover {
+    height: 60px;
+    color:black;
+  }
+
+  .film__object {
+    width: 100%;
+    height: 120px;
+    padding: 3px;
+    z-index: 2;
+    transition: 0.3s ease;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    background-color: #f6f6f6;
+    position: relative;
+    top: 20px;
+    border-bottom: 1px solid rgb(187, 187, 187);
+    left: 0;
+  }
+
+  .film__object:hover {
+    background-color: #e0e0e0;
+    transition: all 0.4s ease;
+    height: 122px;
+    z-index: 4;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  .film__image {
+    border-radius: 10px;
+    width: 95px;
+    opacity: 100%;
+    height: 110px;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+  }
+
+  .film__country {
+    position: absolute;
+    left: 130px;
+    top: 100px;
+    font-size: 15px;
+    color: rgb(107, 107, 107);
+    font-family: Century Gothic;
+  }
+
+  .film__genre {
+    position: absolute;
+    left: 130px;
+    top: 80px;
+    font-size: 15px;
+    color: rgb(107, 107, 107);
+    font-family: Century Gothic;
+  }
+
+  .side-button-1 .side-b {
+    bottom: 0px;
+  }
+
+  .login__button {
+    bottom: 60px;
+  }
+
+  .circle {
+    width: 150px;
+    height: 150px;
+    background-color: #cacaca;
+    border-radius: 100px;
+    position: absolute;
+    z-index: 4;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 1000px;
+  }
+
+  .auth__userIcon {
+    color: white;
+  }
+
+  .auth__icon {
+    left: 5px;
+    position: relative;
+  }
+
+  .description__image {
+    opacity: 100%;
+    height: 300px;
+    position: relative;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%);
+    border-radius: 0 0 0 0;
+  }
+
+
+  .description__name {
+
+    position: relative;
+    font-size: 20px;
+    left: 0;
+    top: 5px;
+    font-weight: 500px;
+    font-family: Century Gothic;
+    color: rgb(50, 50, 50);
+  }
+
+  .title__text {
+    display: none;
+  }
+
+  .description__genre {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .description__year {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .description__country {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .description__actor {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .description__producer {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+
+    font-family: Century Gothic;
+  }
+
+  .description__operator {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .description__screenwriter {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .description__regicer {
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+
+
+  .description__description {
+    display: none;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 500px;
+    font-size: 15px;
+    color: rgb(197, 197, 197);
+    font-family: Century Gothic;
+  }
+
+  .averange {
+    position: relative;
+    display: none;
+    margin-top: 10px;
+    width: 300px;
+    height: 80px;
+    border-radius: 10px;
+    background-color: rgb(222, 222, 222);
+    font-size: 15px;
+    color: black;
+
+    font-family: Century Gothic;
+    border: 3px solid #dedede;
+  }
+
+  .textViews {
+    color: rgb(97, 97, 97);
+    margin: 5px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    left: 0;
+  }
+
+  .rate__name {
+    display: none;
+    position: relative;
+    top: 25%;
+    left: 10%;
+  }
+
+  .rate__count {
+    display: none;
+    width: 80px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #73a32f;
+    border-radius: 10px;
+    position: relative;
+    top: 3%;
+    float: right;
+  }
+
+  .watch__by__subscribe {
+    display: none;
+  }
+
+  .watch__for__free {
+    display: none;
+  }
+
+  .description__information {
+    text-align: center;
+    width: 160px;
+    position: relative;
+    bottom: 15px;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  .role--hidden__title {
+    position: relative;
+    top: 6px;
+    color: rgb(88, 88, 88);
+    float: left;
+    font-family: Century Gothic;
+  }
+
+  .role {
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    bottom: 40px;
+    margin: 0 auto;
+  }
+
+  .comment {
+    background: #e0e0e0;
+  }
+
+  .Admin__comment__box {
+    width: 100%;
+    height: max-content;
+    word-break: break-all;
+    margin: 2px;
+    right: 10px;
+    position: relative;
+    font-family: Century Gothic;
+    background: #d8d8d8;
+  }
+  .comment__wrapper{
+    margin-top: 40px;
+    position: relative;
+    
+  }
+  .commentText {
+    color:#454545;
+  }
+
+  .commentName {
+    color:#333;
+  }
+
+  .comment__box {
+    max-width:100%;
+    min-height: 70px;
+    position: relative;
+    margin:5px;
+    background: #d8d8d8;
+    word-break: break-all;
+  }
+  .commentUsername {
+    color: #454545;
+    border-bottom: 1px solid #474747;
+  }
+
+}

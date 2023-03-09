@@ -51,9 +51,19 @@ class ItemsController {
     }
     home(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            req.session.active = "genre";
+            const items = yield prisma.items.findMany({
+                take: 5,
+                where: {
+                    status: 'подписка'
+                }
+            });
             const genres = yield prisma.genres.findMany({});
+            const categories = yield prisma.categories.findMany({});
             res.render('home', {
+                'categories': categories,
                 'genres': genres,
+                'items': items,
                 auth: req.session.auth,
                 searchMove: req.session.searchMove,
                 admin: req.session.admin,
@@ -82,8 +92,10 @@ class ItemsController {
         return __awaiter(this, void 0, void 0, function* () {
             const genres = yield prisma.genres.findMany({});
             const categories = yield prisma.categories.findMany({});
+            const items = yield prisma.items.findMany({});
             res.render('items/create', {
                 'genres': genres,
+                'items': items,
                 'categories': categories,
                 auth: req.session.auth,
                 admin: req.session.admin,
@@ -95,27 +107,7 @@ class ItemsController {
     }
     AddItems(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { name, image, description, producer, actor, screenwriter, operator, regicer, year, type, age, country, status, genre, video, treller } = req.body;
-            const items = yield prisma.items.findMany({
-                where: {
-                    name: name,
-                    image: image,
-                    description: description,
-                    producer: producer,
-                    actor: actor,
-                    screenwriter: screenwriter,
-                    operator: operator,
-                    regicer: regicer,
-                    type: Number(type),
-                    country: country,
-                    age: age,
-                    genre: genre,
-                    year: Number(year),
-                    status: status,
-                    video: video,
-                    treller: treller
-                }
-            });
+            const { name, image, description, producer, actor, screenwriter, operator, regicer, year, age, country, status, video, treller } = req.body;
             let genres = yield prisma.genres.findMany({});
             let all = "";
             let one = "";
@@ -133,7 +125,7 @@ class ItemsController {
                     screenwriter: screenwriter,
                     operator: operator,
                     regicer: regicer,
-                    type: Number(type),
+                    type: Number(req.body.check__radio),
                     country: country,
                     age: age,
                     genre: all,
@@ -145,7 +137,7 @@ class ItemsController {
             });
             req.session.status = status;
             console.log(req.session.status);
-            res.redirect('/add');
+            res.redirect('items/create');
         });
     }
     bascet(req, res) {
@@ -307,16 +299,6 @@ class ItemsController {
                     Username: String(req.session.name)
                 }
             });
-            const bascet = yield prisma.bascet.findMany({
-                where: {
-                    name: name,
-                    image: image,
-                    country: country,
-                    age: age,
-                    genre: genre,
-                    Username: String(req.session.name)
-                }
-            });
             res.redirect('/bascet');
         });
     }
@@ -358,7 +340,11 @@ class ItemsController {
             else {
                 req.session.searchMove = false;
             }
-            res.render('searchHome', {
+            const categories = yield prisma.categories.findMany({});
+            const genres = yield prisma.genres.findMany({});
+            res.render('search', {
+                'categories': categories,
+                'genres': genres,
                 'items': items,
                 searchMove: req.session.searchMove,
                 auth: req.session.auth,
@@ -379,18 +365,7 @@ class ItemsController {
                 }
             });
             const genres = yield prisma.genres.findMany({});
-            res.render('types/index', {
-                'items': items,
-                'genres': genres,
-                searchMove: req.session.searchMove,
-                auth: req.session.auth,
-                admin: req.session.admin,
-                status: req.session.status,
-                active: req.session.active,
-                category: req.session.category,
-                dark__light: req.session.dark__light,
-                mark: req.session.mark
-            });
+            res.redirect("/moves");
         });
     }
 }

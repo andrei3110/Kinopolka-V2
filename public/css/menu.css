@@ -1,21 +1,22 @@
-
 /* Оформление панели */
 #side-checkbox {
     display: none;
 }
+
 .side-panel {
     position: fixed;
     z-index: 999999;
     top: 0;
     left: -360px;
     background: #2d3141;
-    transition: all 0.5s;   
+    transition: all 0.5s;
     width: 320px;
     height: 100vh;
-    box-shadow: 10px 0 20px rgba(0,0,0,0.4);
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.4);
     color: #FFF;
     padding: 40px 20px;
 }
+
 .side-title {
     font-size: 20px;
     padding-bottom: 10px;
@@ -24,34 +25,70 @@
     text-align: center;
     font-family: Century Gothic;
 }
+
+.side__panel__btn {
+    width:80%;
+    padding:15px;
+    background: #2d3141;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    margin:0 auto;
+    font-family: Century Gothic;
+    color:white;
+}
+.side__panel__btn:hover {
+    transition: all 0.6s;
+    width:80%;
+    padding:15px;
+    background: #3a3f54;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    margin:0 auto;
+    font-family: Century Gothic;
+    color:white;
+}
+
+a {
+    text-decoration: none;
+}
+
 /* Оформление кнопки на странице */
 .side-button-1-wr {
-    text-align: center; /* Контейнер для кнопки, чтобы было удобнее ее разместить */
+    text-align: center;
+    width:0;
+    /* Контейнер для кнопки, чтобы было удобнее ее разместить */
 }
+
 .side-button-1 {
     display: inline-block;
 }
+
 .side-button-1 .side-b {
-    left:10px;
+    left: 10px;
     z-index: 5;
     text-decoration: none;
     position: absolute;
     font-size: 20px;
+    bottom: 10px;
     line-height: 20px;
-    padding: 12px 30px;
+    padding: 10px 10px;
     color: #FFF;
     font-weight: bold;
-    text-transform: uppercase; 
+    text-transform: uppercase;
     font-family: Century Gothic;
     background-color: rgb(45, 45, 45);
-    cursor: pointer; 
-    
+    cursor: pointer;
+
 }
+
 .side-button-1 .side-b:hover,
 .side-button-1 .side-b:active,
 .side-button-1 .side-b:focus {
     color: #FFF;
 }
+
 .side-button-1 .side-b:after,
 .side-button-1 .side-b:before {
     position: absolute;
@@ -62,35 +99,38 @@
     transition: all 280ms ease-in-out;
     width: 0;
 }
-.side-button-1 .side-open:after,
-.side-button-1 .side-open:before {
-    background: rgb(255, 255, 255);
-}
-.side-button-1 .side-close:after,
-.side-button-1 .side-close:before {
-    background: red;
-}
+
+
+
+
+
 .side-button-1 .side-b:before {
     top: -6px;
 }
+
 .side-button-1 .side-b:hover:after,
 .side-button-1 .side-b:hover:before {
     width: 100%;
     left: 0;
 }
+
 /* Переключатели кнопки 1 */
 .side-button-1 .side-close {
     display: none;
 }
-#side-checkbox:checked + .side-panel + .side-button-1-wr .side-button-1 .side-open {
+
+#side-checkbox:checked+.side-panel+.side-button-1-wr .side-button-1 .side-open {
     display: none;
 }
-#side-checkbox:checked + .side-panel + .side-button-1-wr .side-button-1 .side-close {
+
+#side-checkbox:checked+.side-panel+.side-button-1-wr .side-button-1 .side-close {
     display: block;
 }
-#side-checkbox:checked + .side-panel {
+
+#side-checkbox:checked+.side-panel {
     left: 0;
 }
+
 /* Оформление кнопки на панеле */
 .side-button-2 {
     font-size: 30px;
@@ -101,68 +141,80 @@
     right: 8px;
     cursor: pointer;
     transform: rotate(45deg);
-    color: #BFE2FF;    
-    transition: all 280ms ease-in-out;    
+    color: #BFE2FF;
+    transition: all 280ms ease-in-out;
 }
+
 .side-button-2:hover {
-    transform: rotate(45deg) scale(1.1);    
+    transform: rotate(45deg) scale(1.1);
     color: #FFF;
 }
-.logo__munu__user{
-    position:fixed;
-    top:20px;
-    right:10px;
+
+.logo__munu__user {
+    position: fixed;
+    top: 20px;
+    right: 10px;
 }
+
+
 /* Кнопка выпадающего списка */
 .dropbtn {
-    border: 2px solid white;
+    border:none;
     background-color: rgb(45, 45, 45);
+    border-radius: 100px;
     color: white;
-    padding: 16px;
+    padding: 10px;
     font-size: 16px;
-    position:fixed;
-  font-family: Century Gothic;
-   top:15px;
+    position: relative;
+    float:right;
+    bottom: 70px;
     right:10px;
+    font-family: Century Gothic; 
     cursor: pointer;
     z-index: 9;
-  }
-  /* Кнопка выпадающего меню при наведении и фокусировке */
-  .dropbtn:hover, .dropbtn:focus {
+}
+
+/* Кнопка выпадающего меню при наведении и фокусировке */
+.dropbtn:hover,
+.dropbtn:focus {
     transition: all 0.6s;
     background-color: rgb(58, 58, 58);
-  }
-  
-  /* Контейнер <div> - необходим для размещения выпадающего содержимого */
-  .dropdown {
+}
+
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
     position: fixed;
     display: inline-block;
-    top:90px;
-    right:160px;
+    top: 90px;
+    right: 160px;
     float: right;
     z-index: 9;
-  }
-  
-  /* Выпадающее содержимое (скрыто по умолчанию) */
-  .dropdown-content {
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: rgb(45, 45, 45);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-  }
-  
-  /* Ссылки внутри выпадающего списка */
-  .dropdown-content a {
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
     color: black;
     padding: 5px 16px;
     text-decoration: none;
     display: block;
-  }
-  
-  /* Изменение цвета выпадающих ссылок при наведении курсора */
-  .dropdown-content a:hover {background-color: rgb(60, 60, 60);}
-  
-  /* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
-  .show {display:block;}
+}
+
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {
+    background-color: rgb(60, 60, 60);
+}
+
+/* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
+.show {
+    display: block;
+}

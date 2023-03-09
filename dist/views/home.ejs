@@ -2,10 +2,10 @@
 
 <div class="content">
 
-    <div class="tags">
-        <div class="tags__wrapper">
+    <div class="genres__tags">
+        <div class="genres__tags__wrapper">
             <% for (let i=0; i < genres.length; i++) { %>
-                <form class="tags__form" action="/#" method="post">
+                <form class="tags__form" action="/search/byGenre" method="post">
                     <input type="submit" class="tags__item" name="name" value="<%= genres[i].name %>">
                 </form>
             <% } %>
@@ -20,16 +20,16 @@
                     
                     <div class="menu">
                         <a href="/home"><button class="menu__button">
-                                <iconify-icon class="home__icons" icon="majesticons:home" width="30"></iconify-icon> Главная
+                                Главная
                             </button></a>
                         <a href="/categories/1"><button class="menu__button">
-                                <iconify-icon class="icons" icon="material-symbols:play-arrow-outline" width="30"></iconify-icon> Фильмы
+                                Фильмы
                             </button></a>
                         <a href="/categories/2"><button class="menu__button">
-                                <iconify-icon class="icons" icon="mdi:rectangle-outline" width="30"></iconify-icon> Сериалы
+                                Сериалы
                             </button></a>
                         <a href="/categories/3"><button class="menu__button">
-                                <iconify-icon class="icons" icon="ph:film-slate" width="30"></iconify-icon>Медиа
+                                Мультфильмы
                             </button></a>
                     </div>
                 </div>
@@ -64,13 +64,13 @@
                 <div class="subscribe__paid">
                     <div class="subscribe__container">
 
-                        <% for (let i=0; i < 6; i++) { %>
+                        <% for (let i=0; i < items.length; i++) { %>
                         <div class="subscribe__item">
-                            <div class="subscribe__item-image">
-
-                            </div>
+                            <div class="subscribe__item--status">подписка</div>
+                                <img class="subscribe__item-image" src="/img/<%= items[i].image %>">
+                            
                             <div class="subscribe__item-name">
-
+                                <%= items[i].name %>
                             </div>
                         </div>
                         <% } %>
@@ -85,7 +85,8 @@
             </div>
 
         </div>
+        </div>
         <!-- FOOTER -->
-        <div class="grid__footer"></div>
+
 
             <%- include('particles/footer.ejs') %>

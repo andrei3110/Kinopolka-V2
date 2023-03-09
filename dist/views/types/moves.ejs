@@ -2,7 +2,7 @@
 
 <div class="content">
     <%- include('../particles/tags.ejs') %>
-    <%- include('../particles/menu.ejs') %>
+
 
     <div class="film">
 
@@ -43,12 +43,14 @@
                         <input type="hidden" value="<%= items[i].star %>" name="star">
                         <input type="hidden" value="<%= items[i].genre %>" name="genre">
                         <input type="hidden" value="<%= items[i].image %>" name="image">
-                        <!-- <input type="hidden" value="<%= items[i].age %>" name="age"> -->
-                        <input class="InBascet" value=" В избранное" type="submit">
+                        <button class="save__InBascet"  type="submit"><%- include('../icons/bookmark__icon.ejs') %><span class="save__InBascet--text">В избранное</span></button>
 
                     </form>
                     <% if (admin) { %>
-                    <a href="/delete__moves/<%= items[i].id %>"><button class="delete__moves"><i class="fa fa-trash fa-1x" aria-hidden="true"></i></button></a>
+                    <form action="/delete__moves/<%= items[i].id %>" method="post">
+                        <button class="delete__moves"><%- include('../icons/delete__icon.ejs') %></button>
+                    </form>
+
                     <% } %>
                     <% } %>
                 </div>
@@ -60,7 +62,7 @@
     </div>
     <% for (let i = 1; i <= count; i++) { %>
     <a class="page" href="?page=<%= i %>">
-        <div ><%= i %></div>
+        <div><%= i %></div>
     </a>
     <% } %>
     <div class="hollow"></div>

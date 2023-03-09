@@ -1,23 +1,50 @@
+<div class="bar__tags">
+    <div class="tags__wrapper">
 
-<div class="bar__menu">
-    <% if (active=="genre" ){ %>
-        <button class="bar__btn genre__active"><a href="/byGenre">Жанры</a></button>
-        <button class="bar__btn"><a href="/years">Годы</a></button>
-        <button class="bar__btn"> <a href="/years"><a href="/country">Страны</a></button>
-    <% } else if (active=="year" ) { %>
-        <button class="bar__btn"><a href="/byGenre">Жанры</a></button>
-        <button class="bar__btn year__active"><a href="/years">Годы</a></button>
-        <button class="bar__btn"><a href="/country">Страны</a></button>
-    <% } else if (active=="country" ) { %>
-        <button class="bar__btn"><a href="/byGenre">Жанры</a></button>
-        <button class="bar__btn"><a href="/years">Годы</a></button>
-        <button class="bar__btn country__active"><a href="/country">Cтраны</a></button>
-    <% } else { %>
-        <button class="bar__btn"><a href="/byGenre">Жанры</a></button>
-        <button class="bar__btn"><a href="/years">Годы</a></button>
-        <button class="bar__btn"><a href="/country">Страны</a></button>
-    <% } %>
-        <a><button class="bar__btn">Фильмы</button></a>
-        <a><button class="bar__btn">Сериалы</button></a>
-        <a><button class="bar__btn">Мультфильмы</button></a>
+        <div class="bar__menu">
+            <% if (active=="genre" ){ %>
+            <a href="/byGenre" class="bar__btn genre__active">Жанры</a>
+            <a href="/years" class="bar__btn">Годы</a>
+            <a href="/country" class="bar__btn">Страны</a>
+            <a href="/onPaid" class="bar__btn">платные</a>
+            <a href="/byFree" class="bar__btn">бесплатные</a>
+            <% } else if (active=="year" ) { %>
+            <a href="/byGenre" class="bar__btn">Жанры</a>
+            <a href="/years" class="bar__btn year__active">Годы</a>
+            <a href="/country" class="bar__btn">Страны</a>
+            <a href="/onPaid" class="bar__btn">платные</a>
+            <a href="/byFree" class="bar__btn">бесплатные</a>
+            <% } else if (active=="country" ) { %>
+            <a href="/byGenre" class="bar__btn">Жанры</a>
+            <a href="/years" class="bar__btn">Годы</a>
+            <a href="/country" class="bar__btn country__active">Cтраны</a>
+            <a href="/onPaid" class="bar__btn">платные</a>
+            <a href="/byFree" class="bar__btn">бесплатные</a>
+            <% } else if (active=="paid" ) { %>
+            <a href="/byGenre" class="bar__btn">Жанры</a>
+            <a href="/years" class="bar__btn">Годы</a>
+            <a href="/country" class="bar__btn">Cтраны</a>
+            <a href="/onPaid" class="bar__btn onPaid__active">платные</a>
+            <a href="/byFree" class="bar__btn">бесплатные</a>
+            <% } else if (active=="free" ) { %>
+            <a href="/byGenre" class="bar__btn">Жанры</a>
+            <a href="/years" class="bar__btn">Годы</a>
+            <a href="/country" class="bar__btn">Cтраны</a>
+            <a href="/onPaid" class="bar__btn">платные</a>
+            <a href="/byFree" class="bar__btn byFree__active">бесплатные</a>
+            <% } else { %>
+            <a href="/byGenre" class="bar__btn">Жанры</a>
+            <a href="/years" class="bar__btn">Годы</a>
+            <a href="/country" class="bar__btn">Страны</a>
+            <% } %>
+           
+            <% for (let i = 0; i < categories.length; i++) { %>
+            <a href="/categories/<%=  categories[i].id %>" class="bar__btn">
+                <%= categories[i].name %>
+            </a>
+            <% } %>
+
+        </div>
+
+    </div>
 </div>

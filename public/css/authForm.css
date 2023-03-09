@@ -1,22 +1,25 @@
 .circle {
     width: 150px;
     height: 150px;
-    background-color: #DCDCDC;
+    background-color: #727272;
     border-radius: 100px;
     position: absolute;
     z-index: 4;
+     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 1000px;
   }
   
-  .icon {
+  /* .icon {
     width: 150px;
     height: 150px;
     position:absolute;
     z-index: 5;
-    color: #5f5f5f;
+    background-color:  #4c4c4c;
+    color: #4c4c4c;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     border-radius: 90px;
    
-  }
+  } */
   .auth__decoration{
     position: relative;
     margin-left:30%;
@@ -95,7 +98,17 @@
     z-index: 7;
     color: #4c4c4c;
   }
-
+  .login__button{
+    padding:10px;
+    position: relative;
+    bottom: 75px;
+    right:5px;
+    background-color: rgb(45, 45, 45);
+    border:none;
+    z-index: 10;
+    float:right;
+    
+  }
   /* ////////////////////////////////////////////////////////////////// */
   
   .LogIN {

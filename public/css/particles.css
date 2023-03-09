@@ -15,14 +15,21 @@ body {
   background-color: rgb(45, 45, 45);
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-
+.header__content{
+  max-width: 1536px;
+  margin: 0 auto;
+  position:relative;
+  top:0px;
+  height:100%;
+  
+}
 .header__name {
   color: rgb(200, 199, 199);
   font-size: 35px;
   position: absolute;
-  top: 15px;
+  top: 20px;
   font-family: Century Gothic;
-  left: 15px;
+  left: 80px;
 }
 
 .footer {
@@ -42,7 +49,19 @@ body {
   min-height: 100vh;
   background-color: rgb(255, 255, 255);
 }
+.content__description {
+  max-width: 1536px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: rgb(42, 42, 42);
+}
+.content__comment{
+  max-width: 1536px;
+  margin: 0 auto;
 
+  min-height: 100vh;
+  background-color: rgb(42, 42, 42);
+}
 .content__auth {
   padding-top: 200px;
   max-width: 1536px;

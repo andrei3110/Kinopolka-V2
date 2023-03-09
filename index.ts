@@ -91,6 +91,12 @@ app.get("/forfree/:id", (req: Request, res: Response) => {
 app.get("/country", (req: Request, res: Response) => {
   categoriesController.Country(req, res);
 });
+app.get("/byFree", (req: Request, res: Response) => {
+  categoriesController.byFree(req, res);
+});
+app.get("/onPaid", (req: Request, res: Response) => {
+  categoriesController.onPaid(req, res);
+});
 app.get("/from/cartoons/:name", (req: Request, res: Response) => {
   categoriesController.cartoons(req, res);
 });
@@ -167,10 +173,10 @@ app.post("/save__Video", (req: Request, res: Response) => {
 app.get("/save__Video", (req: Request, res: Response) => {
   itemsController.bascet(req, res);
 });
-app.get("/delete__Video/:id", (req: Request, res: Response) => {
+app.post("/delete__Video/:id", (req: Request, res: Response) => {
   itemsController.delete__Video(req, res);
 });
-app.get("/delete__Video", (req: Request, res: Response) => {
+app.get("/bascet", (req: Request, res: Response) => {
   itemsController.bascet(req, res);
 });
 app.get("/des__film/:id", (req: Request, res: Response) => {
@@ -185,53 +191,11 @@ app.post("/des__film/:id", (req: Request, res: Response) => {
 app.post("/home", (req: Request, res: Response) => {
   itemsController.searchMove(req, res);
 });
-app.get("/delete__moves/:id", (req: Request, res: Response) => {
+app.post("/delete__moves/:id", (req: Request, res: Response) => {
   itemsController.delete__moves(req, res);
 });
-/////////////////////////////////////////////genres
-app.post("/bovik", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/adventure", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/triller", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/horror", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/drama", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/comedy", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/melodrama", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/tragedy", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/fantastic", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/anime", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/mistyc", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/detective", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/child", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/family", (req: Request, res: Response) => {
-  categoriesController.searchFilms(req, res);
-});
-app.post("/istoric", (req: Request, res: Response) => {
+
+app.post("/search/byGenre", (req: Request, res: Response) => {
   categoriesController.searchFilms(req, res);
 });
 

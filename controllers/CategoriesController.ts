@@ -9,9 +9,6 @@ export class CategoriesController {
         const { id } = req.params;
 
         let categories = await prisma.categories.findMany({
-            where: {
-                id: Number(id),
-            }
         });
         let items = await prisma.items.findMany({
             where: {
@@ -174,11 +171,12 @@ export class CategoriesController {
                 }
             
             });
-            console.log(req.session.category)
+            
             let k = 0;
             for (let i = 0; i < items.length; i++) {
                 k = k + 1
             }
+            const categories =  await prisma.categories.findMany({})
             res.render('types/moves', {
                 auth: req.session.auth,
                 status: req.session.status,
@@ -189,6 +187,7 @@ export class CategoriesController {
                 category: req.session.category,
                 'items': items,
                 'cartoonGenres': genres,
+                'categories':categories,
             });
         }else{
             const items = await prisma.items.findMany({
@@ -201,7 +200,7 @@ export class CategoriesController {
                 }
             
             });
-            
+            const categories =  await prisma.categories.findMany({})
             res.render('types/moves', {
                 auth: req.session.auth,
                 status: req.session.status,
@@ -212,6 +211,7 @@ export class CategoriesController {
                 category: req.session.category,
                 'items': items,
                 'cartoonGenres': genres,
+                'categories':categories,
             });
         }
        
@@ -233,8 +233,11 @@ export class CategoriesController {
             req.session.searchMove = false
         }
 
-        console.log(req.session.searchMove)
-        res.render('searchHome', {
+        const categories = await prisma.categories.findMany({})
+        const genres = await prisma.genres.findMany({})
+        res.render('search', {
+            'genres':genres,
+            'categories':categories,
             'items': items,
             searchMove: req.session.searchMove,
             auth: req.session.auth,
@@ -252,6 +255,7 @@ export class CategoriesController {
         const years = await prisma.years.findMany({
 
         })
+        const categories =  await prisma.categories.findMany({})
         res.render('types/years', {
             auth: req.session.auth,
             active: req.session.active,
@@ -260,7 +264,8 @@ export class CategoriesController {
             admin: req.session.admin,
             dark__light: req.session.dark__light,
             category: req.session.category,
-            'years': years
+            'years': years,
+            'categories':categories
         });
     }
     async ByYear(req: Request, res: Response) {
@@ -294,7 +299,7 @@ export class CategoriesController {
                 }
             
             });
-            console.log(req.session.category)
+           const categories = await prisma.categories.findMany({})
             let k = 0;
             for (let i = 0; i < items.length; i++) {
                 k = k + 1
@@ -308,9 +313,11 @@ export class CategoriesController {
                 dark__light: req.session.dark__light,
                 category: req.session.category,
                 'items': items,
+                'categories':categories
                 
             });
         }else{
+            const categories = await prisma.categories.findMany({})
             const items = await prisma.items.findMany({
                 where: {
                     year: Number(date),
@@ -329,6 +336,7 @@ export class CategoriesController {
                 dark__light: req.session.dark__light,
                 category: req.session.category,
                 'items': items,
+                'categories':categories
                 
             });
         }
@@ -336,12 +344,9 @@ export class CategoriesController {
     async ByGenre(req: Request, res: Response) {
         const { id } = req.params;
         req.session.active = "genre";
-        const genres = await prisma.genres.findMany({
-
-        })
-        const cartoons = await prisma.cartoonGenres.findMany({
-
-        })
+        const genres = await prisma.genres.findMany({})
+        const cartoons = await prisma.cartoonGenres.findMany({})
+        const categories =  await prisma.categories.findMany({})
         res.render('types/index', {
             auth: req.session.auth,
             count: req.session.count,
@@ -350,18 +355,58 @@ export class CategoriesController {
             active: req.session.active,
             dark__light: req.session.dark__light,
             category: req.session.category,
-
+            'categories':categories,
             'genres': genres,
             'cartoonGenres': cartoons
         });
     }
-
+    async byFree(req: Request, res: Response) {
+        req.session.active = "free";
+        const items = await prisma.items.findMany({
+            where:{
+                status:'бесплатно'
+            }
+        })
+        const categories =  await prisma.categories.findMany({})
+            res.render('types/moves', {
+                auth: req.session.auth,
+                active: req.session.active,
+                status: req.session.status,
+                admin: req.session.admin,
+                dark__light: req.session.dark__light,
+                category: req.session.category,
+                count: req.session.count,
+                'categories':categories,
+                'items':items,
+            });
+        }
+        async onPaid(req: Request, res: Response) {
+            req.session.active = "paid";
+            const items = await prisma.items.findMany({
+                where:{
+                    status:'подписка'
+                }
+            })
+            const categories =  await prisma.categories.findMany({})
+                res.render('types/moves', {
+                    auth: req.session.auth,
+                    active: req.session.active,
+                    status: req.session.status,
+                    admin: req.session.admin,
+                    dark__light: req.session.dark__light,
+                    category: req.session.category,
+                    count: req.session.count,
+                    'categories':categories,
+                    'items':items,
+                });
+            }
     async Country(req: Request, res: Response) {
         const { name } = req.params;
         req.session.active = "country";
         const country = await prisma.country.findMany({
 
         });
+        const categories =  await prisma.categories.findMany({})
         res.render('types/country', {
             auth: req.session.auth,
             count: req.session.count,
@@ -370,6 +415,7 @@ export class CategoriesController {
             admin: req.session.admin,
             dark__light: req.session.dark__light,
             category: req.session.category,
+            'categories':categories,
             'country': country,
         });
     }
@@ -411,6 +457,7 @@ export class CategoriesController {
             for (let i = 0; i < items.length; i++) {
                 k = k + 1
             }
+            const categories = await prisma.categories.findMany({})
             res.render('types/moves', {
                 auth: req.session.auth,
                 status: req.session.status,
@@ -420,6 +467,7 @@ export class CategoriesController {
                 dark__light: req.session.dark__light,
                 category: req.session.category,
                 'items': items,
+                'categories':categories
                 
             });
         }else{
@@ -432,7 +480,7 @@ export class CategoriesController {
                 }
             
             });
-            
+            const categories = await prisma.categories.findMany({})
             res.render('types/moves', {
                 auth: req.session.auth,
                 status: req.session.status,
@@ -442,6 +490,7 @@ export class CategoriesController {
                 dark__light: req.session.dark__light,
                 category: req.session.category,
                 'items': items,
+                'categories':categories
                 
             });
         }

@@ -30,7 +30,6 @@
   bottom: 50%;
   border-bottom: 1px solid rgb(177, 177, 177);
   left: 13%;
-
 }
 
 .genre__object:hover {
@@ -42,48 +41,3 @@
 }
 
 /*BAR MENU*/
-.bar__menu {
-  width: 100%;
-  position: relative;
-  top: 0px;
-  z-index: 3;
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
-  height: 50px;
-  background-color: rgb(255, 255, 255);
-}
-
-.bar__btn {
-  position: relative;
-  width: 100px;
-  height: 100%;
-  left: 25%;
-  z-index: 3;
-  color: #606060;
-  border: none;
-  background-color: rgb(255, 255, 255);
-  font-size: 100%;
-  text-align: center;
-  font-family: Century Gothic;
-}
-
-.genre__active {
-  background-color: #ebebeb;
-  border-radius: 10px;
-  color: rgb(0, 0, 0);
-  transition: all 0.5s ease;
-}
-
-.year__active {
-  background-color: #ebebeb;
-  border-radius: 10px;
-  color: rgb(0, 0, 0);
-  transition: all 0.6s ease;
-}
-
-.country__active {
-  background-color: #ebebeb;
-  border-radius: 10px;
-  color: rgb(0, 0, 0);
-  transition: all 0.6s ease;
-}

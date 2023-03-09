@@ -1,19 +1,18 @@
 <%- include('../particles/header.ejs') %>
     <div class="content__auth">
-    
        
             <form action="/login" method="post">
 
                 <div class="vhod">
                     <div class="auth__decoration">
-                        <div><i class="fa fa-user-circle fa-10x icon" aria-hidden="true"></i></div>
+                        <div class="auth__icon"><%- include('../icons/auth__user__icon.ejs') %></div>
                         <div class="circle"></div>
                     </div>
                     <div class="vhod__block-inputs">
                        
-                        <span class="input__addon__name"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span><input class="input__vhod" name="name" placeholder="Введите имя">
+                        <span class="input__addon__name"><%- include('../icons/user__login__icon.ejs') %></span><input class="input__vhod" name="name" placeholder="Введите имя">
                     
-                        <span class="input__addon__key"><i class="fa fa-key fa-2x" aria-hidden="true"></i></span><input class="input__vhod" id="Textinput" type="password" name="password" placeholder="Введите пароль">
+                        <span class="input__addon__key"><%- include('../icons/key__icon.ejs') %></span><input class="input__vhod" id="Textinput" type="password" name="password" placeholder="Введите пароль">
                     
                     </div>
     

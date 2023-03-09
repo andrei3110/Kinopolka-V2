@@ -4,21 +4,21 @@
                     <form action="/register/Form" method="post">
                         <div class="reg">
                             <div class="auth__decoration">
-                                <div><i class="fa fa-user-circle fa-10x icon" aria-hidden="true"></i></div>
+                                <div><%- include('../icons/auth__user__icon.ejs') %></div>
                                 <div class="circle"></div>
                             </div>
                             <div class="vhod__block-inputs">
-                                <span class="input__addon__name"><i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+                                <span class="input__addon__name"><%- include('../icons/user__login__icon.ejs') %></span>
                             <input class="input__reg" name="name" placeholder="Введите имя">
                             <% if(auth == false) { %>
                                 <div class="error__name">
                                     это имя уже занято
                                 </div>
-                                <span class="afterError__input__addon__key"><i class="fa fa-key fa-2x" aria-hidden="true"></i>
+                                <span class="afterError__input__addon__key"><%- include('../icons/key__icon.ejs') %>
                                 </span>
                                 <input class="afterError__input__reg" id="Textinput" name="password" type="password" placeholder="Введите пароль">
                             <% } else { %>
-                                <span class="input__addon__key"><i class="fa fa-key fa-2x" aria-hidden="true"></i>
+                                <span class="input__addon__key"><%- include('../icons/key__icon.ejs') %>
                                 </span>
                                 <input class="input__reg" id="Textinput" name="password" type="password" placeholder="Введите пароль">
                             <% } %>

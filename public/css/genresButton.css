@@ -1,14 +1,16 @@
-.tags {
+.genres__tags {
   margin-top: 80px;
   position: relative;
   border: 2px solid #777;
+  background-color: #a5a5a5;
 }
 
-div.tags__wrapper {
+div.genres__tags__wrapper {
   position: relative;
+  margin:0 auto;
+  width:max-content;
   background-color: #a5a5a5;
-  border-left: 2px solid #777;
-  border-right: 2px solid #777;
+
   overflow: auto;
   white-space: nowrap;
   
@@ -38,6 +40,63 @@ div.tags__wrapper {
 
 }
 
+div.genres__tags__wrapper form {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  height: 50px;
+  text-decoration: none;
+  
+}
+
+div.genres__tags__wrapper form:hover {
+  background-color: #777;
+}
+.tags__form {
+  position:relative;
+  
+  margin: 0 auto;
+  height: 30px;
+  border: none;
+  background-color: #a5a5a5;
+  opacity: 80%;
+  z-index: 1;
+  color: white;
+  font-family: Century Gothic;
+}
+.tags__item{
+  
+  position:relative;
+  height: 50px;
+   border: none;
+   background-color: #a5a5a5;
+   opacity: 80%;
+   z-index: 1;
+   color: white;
+   
+   font-family: Century Gothic;
+  
+ }
+
+ /*BAR__TAGS*/
+
+ .bar__tags {
+  margin-top: 80px;
+  position: relative;
+  border: 2px solid #777;
+  background-color: #f2f2f2;
+}
+
+div.tags__wrapper {
+  position: relative;
+  margin:0 auto;
+  width:max-content;
+  background-color: #a5a5a5;
+  overflow: auto;
+  white-space: nowrap;
+  
+}
+
 div.tags__wrapper form {
   display: inline-block;
   color: white;
@@ -50,27 +109,86 @@ div.tags__wrapper form {
 div.tags__wrapper form:hover {
   background-color: #777;
 }
-.tags__form {
-  position:relative;
-  left:10%;
-  margin: 0 auto;
-  height: 30px;
-  border: none;
+
+ .bar__menu {
+  width:max-content;
+  margin:0 auto;
+  position: relative;
+  top: 0px;
+  z-index: 3;
+  
+  height: 50px;
+  background-color: #ebebeb;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
   background-color: #a5a5a5;
-  opacity: 80%;
-  z-index: 1;
-  color: white;
+  position: relative;
+  top: 50px;
+
+}
+
+::-webkit-scrollbar-track {
+  width: 15px;
+  background-color: #e3e3e3;
+  top: 50px;
+
+}
+
+::-webkit-scrollbar-thumb {
+  width: 15px;
+  top: 50px;
+  border-radius: 10px;
+  background-color: #c2bdbd;
+
+}
+
+.bar__btn {
+  position: relative;
+  width:max-content;
+  padding: 20px;
+  height:40px;
+  top:11px;
+  z-index: 3;
+  color: #606060;
+  border: none;
+  background-color: #ebebeb;
+  
+  
   font-family: Century Gothic;
 }
-.tags__item{
-  position:relative;
-  height: 50px;
-   border: none;
-   background-color: #a5a5a5;
-   opacity: 80%;
-   z-index: 1;
-   color: white;
-   
-   font-family: Century Gothic;
+
+
+.genre__active {
+  background-color: #d7d7d7;
   
- }
+  color: rgb(0, 0, 0);
+  transition: all 0.5s ease;
+}
+
+.year__active {
+  background-color: #d7d7d7;
+
+  color: rgb(0, 0, 0);
+  transition: all 0.6s ease;
+}
+
+.country__active {
+  background-color: #d7d7d7;
+
+  color: rgb(0, 0, 0);
+  transition: all 0.6s ease;
+}
+.onPaid__active {
+  background-color: #d7d7d7;
+
+  color: rgb(0, 0, 0);
+  transition: all 0.6s ease;
+}
+.byFree__active {
+  background-color: #d7d7d7;
+
+  color: rgb(0, 0, 0);
+  transition: all 0.6s ease;
+}
